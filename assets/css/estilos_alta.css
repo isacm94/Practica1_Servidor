@@ -1,0 +1,52 @@
+/*btn enviar*/
+.btn-enviar { 
+  color: #FFFFFF; 
+  background-color: #2C3E50; 
+  border-color: #2C3E50; 
+} 
+ 
+.btn-enviar:hover, 
+.btn-enviar:focus, 
+.btn-enviar:active, 
+.btn-enviar.active, 
+.open .dropdown-toggle.btn-enviar { 
+  color: #FFFFFF; 
+  background-color: #2C3E50; 
+  border-color: #2C3E50; 
+} 
+ 
+.btn-enviar:active, 
+.btn-enviar.active, 
+.open .dropdown-toggle.btn-enviar { 
+  background-image: none; 
+} 
+ 
+.btn-enviar.disabled, 
+.btn-enviar[disabled], 
+fieldset[disabled] .btn-enviar, 
+.btn-enviar.disabled:hover, 
+.btn-enviar[disabled]:hover, 
+fieldset[disabled] .btn-enviar:hover, 
+.btn-enviar.disabled:focus, 
+.btn-enviar[disabled]:focus, 
+fieldset[disabled] .btn-enviar:focus, 
+.btn-enviar.disabled:active, 
+.btn-enviar[disabled]:active, 
+fieldset[disabled] .btn-enviar:active, 
+.btn-enviar.disabled.active, 
+.btn-enviar[disabled].active, 
+fieldset[disabled] .btn-enviar.active { 
+  background-color: #2C3E50; 
+  border-color: #2C3E50; 
+} 
+ 
+.btn-enviar .badge { 
+  color: #2C3E50; 
+  background-color: #FFFFFF; 
+}
+
+/*Mensaje error*/
+
+.msgerror {
+	word-wrap: break-word;
+}
