@@ -3,9 +3,14 @@ include_once 'help_alta.php'; //funciones
 
 define('APPVIEW', __DIR__.'\\..\\views\\');
 define('APPCTRL', __DIR__);//directorio actual
+//define('APPMOD', __DIR__.'\\..\\models\\');
 
 $errores = Array();
 $correcto = TRUE;
+
+//Cargamos las provincias desde la bd para poder crear select en la vista
+include_once '\\..\\models\\provincias.php';
+$Provincias = Provincias();
 
 if(! $_POST){
 	include APPVIEW.'alta.php'; //formulario alta

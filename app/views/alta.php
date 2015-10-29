@@ -68,6 +68,12 @@
 			    </div>
 			    
 			    <!-- HACER SELECT CON PROVINCIAS -->
+			     <div class="form-group">
+			        <label class="control-label col-xs-3">Provincia:</label>
+			        <div class="col-xs-9">
+			    		<?php echo CreaSelect('provincia', $Provincias)?>		
+			   		</div>
+			    </div>
 			    
 			    <div class="form-group">
 			        <label class="control-label col-xs-3">Fecha Realización:</label>

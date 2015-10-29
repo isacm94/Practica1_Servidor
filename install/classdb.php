@@ -1,29 +1,22 @@
 <?php
-/* Clase encargada de gestionar las conexiones a la base de datos */
-define('APPVIEW', __DIR__.'\\..\\views\\');
+
+//define('APPCONFIG', __DIR__.'\\..\\app\\config.php');
 // Datos de configuración.
-$db_conf=array(
-	'servidor'=>'localhost',
-	'usuario'=>'root',
-	'password'=>'',
-	'base_datos'=>'testDB'
-);
+include_once '\\..\\app\\config.php';
 
-
+/* Clase encargada de gestionar las conexiones a la base de datos */
 Class Db {
 
-	
-	
 	private $link;
 	private $result;
 	private $regActual;
 
-	static $_instance;
+	private static $_instance;
 
 	/*La función construct es privada para evitar que el objeto pueda ser creado mediante new*/
 	private function __construct(){
 		
-		$this->Conectar($GLOBALS['db_conf']);
+		$this->Conectar($GLOBALS['db_conf']);//le pasamos la base de datos
 	}
 
 	/*Evitamos el clonaje del objeto. Patrón Singleton*/
@@ -47,7 +40,7 @@ Class Db {
 			// Puede que no se requiera ser tan 'expeditivos' y que lanzar una excepción sea más versatil
 			exit();			
 		}
-		$this->link=new mysqli($conf['servidor'], $conf['usuario'], $conf['password']);
+		$this-> link =new mysqli($conf['servidor'], $conf['usuario'], $conf['password']);
 
 		/* check connection */
 		if (! $this->link ) {
@@ -56,7 +49,7 @@ Class Db {
 			exit();
 		}
 		
-		$this->link->select_db($this->base_datos);
+		$this->link->select_db($conf['base_datos']);
 		$this->link->query("SET NAMES 'utf8'");
 	}
 
@@ -88,7 +81,7 @@ Class Db {
 			}
 			$result=$this->result;
 		}
-		$this->regActual=$result->fecth_array();;
+		$this->regActual=$result->fetch_array();;
 		return $this->regActual;
 	}
 
