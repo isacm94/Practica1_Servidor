@@ -56,9 +56,15 @@ else {
 	if(! $correcto){
 		include APPVIEW.'alta.php'; //formulario alta
 	}
-	else{		
-		include APPVIEW.'lista.php'; //controlador que muestra la lista
-		//inserto
+	else{	
+		
+		CreaArrayTarea($_POST['descripcion'], $_POST['personaContacto'], $_POST['telefonoContacto'], $_POST['cp'],
+				 $_POST['direccion'], $_POST['poblacion'], $_POST['cp'], 'Pendiente',
+				 date('d-m-Y'), null, $_POST['provincia'], $_POST['fechaRealizacion'], 
+				 $_POST['anotacionesAnte'], null);
+		//include APPVIEW.'lista.php'; //controlador que muestra la lista
+		
+		echo 'inserto';
 	}
 		
 

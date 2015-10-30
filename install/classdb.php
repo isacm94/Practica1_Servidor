@@ -62,7 +62,32 @@ Class Db {
 	public function Consulta($sql)
 	{
 		$this->result=$this->link->query($sql);
+		if (! $this->result ) {
+			$this->ShowError();
+		}
 		return $this->result;
+	}
+
+	public function ShowError()
+	{
+		echo "<p>Error: ".$this->link->error."</p>";
+		die();
+	}
+	
+	public function Insertar($tabla, $registro){
+		$values=array();
+		$campos=array();
+		foreach($registro as $campo=>$valor)
+		{
+			$values[]='"'.addslashes($valor).'"';
+			$campos[]='`'.$campo.'`';
+		}		
+		$sql = "INSERT INTO `$tabla`(".implode(',', $campos).") 
+				 VALUES (".implode(',', $values)."); ";
+		
+		return $this->link->query($sql);
+		//$data = array("isbd","{$categoria}", "{$nombre}", "{$descripcion}", "{$precio}");
+		//$insert_id = DBConnector::ejecutar($sql, $data);
 	}
 
 	/**

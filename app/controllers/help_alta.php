@@ -92,7 +92,7 @@ function VerError($campo, $errores){
  * @return string
  */
 function CreaSelect($name, $opciones, $valorDefecto='')
-{
+{ 
 	$html="\n".'<select class="form-control" name="'.$name.'">';
 	foreach($opciones as $value=>$text)
 	{
@@ -105,4 +105,33 @@ function CreaSelect($name, $opciones, $valorDefecto='')
 	$html.="\n</select>";
 
 	return $html;
+}
+
+function CreaArrayTarea($descripcion, $pc, $tc, $correo, $dir, $pob, $cp, $estado, 
+		$fC, $operario, $codProvincia, $fR, $anotAnt, $anotPost){
+	//CAMBIAR LOS NOMBRES DE LOS CAMPOS en el array y ponerlo ogial q en la bd
+	$tarea = array(/*'id'=> '', AUTONUMERICO*/
+				   'descripcion' => $descripcion, 
+				   'personaContacto'=> $pc, 
+				   'telefonoContacto'=> $tc, 
+				   'correo' => $correo, 
+				   'direccion'=> $dir, 
+				   'poblacion'=> $pob, 
+				   'cp' => $cp, 
+				   'estado' => $estado, /*la tarea empieza en pendiente*/
+				   'fechaCreacion' => $fC, /*fecha actual*/
+			       'operario' => $operario,//no se asigna el operario en alta, sería en modficiar
+				   'provincia' => $codProvincia,
+				   'fechaRealizacion' => $fR,
+				   'anotacionesAnteriores'=> $anotAnt,
+				   'anotacionesPosteriores'=> $anotPost
+	);
+	/*
+	echo '<pre>ARRAY TAREA:';
+	print_r($tarea);
+	echo '</pre>';*/
+	
+	
+	
+	
 }
