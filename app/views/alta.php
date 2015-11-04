@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>vista ALTA</title>
 		
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -87,7 +87,7 @@
 			    <div class="form-group">
 			        <label class="control-label col-xs-3">Anotaciones Anteriores:</label>
 			        <div class="col-xs-9">
-			            <textarea rows="3" class="form-control" placeholder="Anotaciones Anteriores" name="anotacionesAnte" value=""></textarea>
+			            <textarea rows="3" class="form-control" placeholder="Anotaciones Anteriores" name="anotacionesAnte"><?=ValorPost('anotacionesAnte')?></textarea>
 			        </div>
 			    </div>
 			    

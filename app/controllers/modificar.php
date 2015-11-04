@@ -1,9 +1,8 @@
 <?php
-include_once 'helps.php'; //funciones de alta
-include_once 'help_lista.php'; //funciones de listas
+include_once 'helps.php'; //funciones
 
 define('APPVIEW', __DIR__.'\\..\\views\\');
-//define('APPCTRL', __DIR__);//directorio actual
+define('APPCTRL', __DIR__);//directorio actual
 //define('APPMOD', __DIR__.'\\..\\models\\');
 
 $errores = Array();
@@ -16,11 +15,11 @@ $Provincias = GetProvincias();
 //Cargamos el modelo de alta para hacer la insercción en la base de datos
 include_once '\\..\\models\\alta.php';
 
-//Cargamos el modelo de tareas para obtner un array de tareas de la base de datos
-//include_once '\\..\\models\\tareas.php';
+//Cargamos el modelo de tarea para cargar los datos correspondientes a la tarea desde la base de datos
+include_once '\\..\\models\\tareas.php';
 
 if(! $_POST){
-	include APPVIEW.'alta.php'; //formulario alta
+	include APPVIEW.'modificar.php'; //formulario alta
 }
 else {
 	
@@ -61,22 +60,11 @@ else {
 	
 	
 	if(! $correcto){
-		include APPVIEW.'alta.php'; //formulario alta
+		include APPVIEW.'modificar.php'; //formulario modificar
 	}
 	else{	
 
-		$dateRealizacion = new Datetime($_POST['fechaRealizacion']);
-
-		$campos = CreaArrayTarea(	 
-				$_POST['descripcion'], $_POST['personaContacto'], $_POST['telefonoContacto'], $_POST['correoContacto'],
-				$_POST['direccion'], $_POST['poblacion'], $_POST['cp'],$_POST['provincia'], 'Pendiente', 
-				null/*ESTADO*/,  date_format($dateRealizacion, 'Y-m-d'), 
-				$_POST['anotacionesAnte'], null);
-
-		
-		
-		InsertaTareaEnBD('tarea', $campos);
-		include 'lista.php'; //muestra la lista
+		echo 'LISTA MODIFICAR';
 		
 		
 	}

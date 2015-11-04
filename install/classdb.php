@@ -74,20 +74,20 @@ Class Db {
 		die();
 	}
 	
-	public function Insertar($tabla, $registro){
+	public function Insertar($tabla, $registro){		
+	
 		$values=array();
+
 		$campos=array();
-		foreach($registro as $campo=>$valor)
+
+		foreach($registro as $campo => $valor)
 		{
 			$values[]='"'.addslashes($valor).'"';
 			$campos[]='`'.$campo.'`';
 		}		
-		$sql = "INSERT INTO `$tabla`(".implode(',', $campos).") 
-				 VALUES (".implode(',', $values)."); ";
+		$sql = "INSERT INTO `".$tabla."`(".implode(',', $campos).") VALUES (".implode(',', $values).");";
 		
 		return $this->link->query($sql);
-		//$data = array("isbd","{$categoria}", "{$nombre}", "{$descripcion}", "{$precio}");
-		//$insert_id = DBConnector::ejecutar($sql, $data);
 	}
 
 	/**
@@ -106,7 +106,7 @@ Class Db {
 			}
 			$result=$this->result;
 		}
-		$this->regActual=$result->fetch_array();;
+		$this->regActual=$result->fetch_assoc();//Cambiado fetch_array --> fetch_row para que solo lo indexe por numero
 		return $this->regActual;
 	}
 

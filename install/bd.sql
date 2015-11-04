@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2015 a las 15:08:43
+-- Tiempo de generación: 04-11-2015 a las 19:17:07
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bdpacogarden`
 --
+CREATE DATABASE IF NOT EXISTS `bdpacogarden` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `bdpacogarden`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `tarea`
 --
 
+DROP TABLE IF EXISTS `tarea`;
 CREATE TABLE IF NOT EXISTS `tarea` (
   `id` int(5) NOT NULL,
   `descripcion` text,
@@ -35,14 +38,24 @@ CREATE TABLE IF NOT EXISTS `tarea` (
   `direccion` varchar(100) DEFAULT NULL,
   `poblacion` varchar(100) DEFAULT NULL,
   `cp` int(5) DEFAULT NULL,
-  `estado` varchar(1) DEFAULT NULL,
+  `tbl_provincias_cod` char(2) NOT NULL,
+  `estado` varchar(15) DEFAULT NULL,
   `fecha_creacion` date DEFAULT NULL,
   `operario_encargado` varchar(50) DEFAULT NULL,
   `fecha_realizacion` date DEFAULT NULL,
   `anotaciones_anteriores` text,
-  `anotaciones_posteriores` text,
-  `tbl_provincias_cod` char(2) NOT NULL
+  `anotaciones_posteriores` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Disparadores `tarea`
+--
+DROP TRIGGER IF EXISTS `InsertaFechaCreacionEnBD`;
+DELIMITER $$
+CREATE TRIGGER `InsertaFechaCreacionEnBD` BEFORE INSERT ON `tarea`
+ FOR EACH ROW SET  NEW.fecha_creacion=CURRENT_DATE()
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -50,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `tarea` (
 -- Estructura de tabla para la tabla `tbl_provincias`
 --
 
+DROP TABLE IF EXISTS `tbl_provincias`;
 CREATE TABLE IF NOT EXISTS `tbl_provincias` (
   `cod` char(2) NOT NULL DEFAULT '00' COMMENT 'Código de la provincia de dos digitos',
   `nombre` varchar(50) NOT NULL DEFAULT '' COMMENT 'Nombre de la provincia',

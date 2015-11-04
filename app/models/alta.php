@@ -4,29 +4,16 @@
 include_once '\\..\\..\\install\\classdb.php';
 
 /**
- * Devuelve un array con los datos de las provincias
+ * Inserta una tarea en la base de datos
  */
-function InsertaTareaEnBD()
+function InsertaTareaEnBD($tarea, $registro)
 {
-	/*Creamos la instancia del objeto. Ya estamos conectados*/
-	$bd = Db::getInstance();
 
-	/*Creamos una query sencilla*/
-	$sql = 'SELECT cod, nombre as nom
-					FROM `tbl_provincias`';
+	/*Creamos la instancia del objeto. Ya estamos conectados*/
+	$bd = Db::getInstance();	
 
 	/*Ejecutamos la query*/
-	$bd->Consulta($sql);
-
-	// Creamos el array donde se guardarán las provincias
-	$Provincias = Array();
-
-	/*Realizamos un bucle para ir obteniendo los resultados*/
-	while ($reg = $bd->LeeRegistro())
-	{
-		$Provincias[$reg['cod']] = $reg['nom'];
-	}
-	return $Provincias;
+	$bd->Insertar($tarea, $registro);
 }
 
 

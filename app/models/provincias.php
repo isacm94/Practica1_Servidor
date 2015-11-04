@@ -6,13 +6,13 @@ include_once '\\..\\..\\install\\classdb.php';
 /**
  * Devuelve un array con los datos de las provincias
  */
-function Provincias()
+function GetProvincias()
 {
 	/*Creamos la instancia del objeto. Ya estamos conectados*/
 	$bd = Db::getInstance();
 	
 	/*Creamos una query sencilla*/
-	$sql = 'SELECT cod, nombre as nom
+	$sql = 'SELECT cod as cod, nombre as nom
 					FROM `tbl_provincias`';
 	
 	/*Ejecutamos la query*/
@@ -27,6 +27,26 @@ function Provincias()
 		$Provincias[$reg['cod']] = $reg['nom'];	 
 	}
 	return $Provincias;
+}
+
+function GetNombreProvincias($cod){
+
+
+	/*Creamos la instancia del objeto. Ya estamos conectados*/
+	$bd = Db::getInstance();
+	
+	/*Creamos una query sencilla*/
+	$sql = 'SELECT nombre
+					FROM `tbl_provincias`
+						where cod='.$cod;
+	
+	/*Ejecutamos la query*/
+	$bd->Consulta($sql);
+	
+	/*Obtenemos los resultados*/
+	$line = $bd->LeeRegistro();
+	
+	return $line['nombre'];
 }
 
 
