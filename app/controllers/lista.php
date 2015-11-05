@@ -40,9 +40,11 @@ $totalRegistros = GetNumRegistrosTareas();
 
 $totalPaginas = $totalRegistros/$nElementosxPagina;
 
-if(is_float($totalPaginas))
+if(is_float($totalPaginas)){
+	$totalPaginas = intval($totalPaginas);
 	$totalPaginas++;
-
+}
+	
 echo "<p>Nº Registros: $totalRegistros</p>";
 
 //Muestra Formulario lista
@@ -62,20 +64,19 @@ MuestraPaginador($nPag, $totalPaginas, $myURL);
  */
 function MuestraPaginador($pag_actual, $nPags, $url)
 {
-	// Mostramos paginador
-	echo '<div style="text-align=center">';
+	// Mostramos paginador 
+	echo '<div class="paginador">';
 		echo EnlaceAPagina($url, 1, 'Inicio');
-		echo EnlaceAPagina($url, $pag_actual-1, 'Anterior ', $pag_actual>1);
-		
-			
+		echo EnlaceAPagina($url, $pag_actual-1, 'Anterior', $pag_actual>1);
+			//Números Páginas
+			for($pag=1; $pag<=$nPags; $pag++)
+			{
+				echo EnlaceAPagina($url, $pag, $pag, $pag_actual!=$pag);
+			}
 		echo EnlaceAPagina($url, $pag_actual+1, 'Siguiente', $pag_actual<$nPags);
 		echo EnlaceAPagina($url, $nPags, 'Fin');
 		
-		echo '<br>'; //Siguiente linea
-		for($pag=1; $pag<=$nPags; $pag++)
-		{
-			echo EnlaceAPagina($url, $pag, $pag, $pag_actual!=$pag);
-		}
+		
 	echo "</div>";
 }
 
@@ -91,8 +92,50 @@ function MuestraPaginador($pag_actual, $nPags, $url)
  */
 function EnlaceAPagina($url, $pag, $texto, $activo=true)
 {
-	if ($activo)
-		return '  <a href="'.$url.'?pag='.$pag.'">'.$texto.'</a>  ';
-	else 
-		return $texto;
+	switch ($texto) {
+		case 'Inicio':{
+			if ($activo)
+				return ' <a class="btn btn-inicio-fin" href="'.$url.'?pag='.$pag.'" title="Inicio"><span class="glyphicon glyphicon-backward"></span></a>  ';
+			else 
+				return ' <a class="btn btn-default"  title="Inicio"><span class="glyphicon glyphicon-backward"></span></a>  ';
+		}			
+		break;
+		
+		case 'Fin':{
+			if ($activo)
+				return ' <a class="btn btn-inicio-fin" href="'.$url.'?pag='.$pag.'" title="Fin"><span class="glyphicon glyphicon-forward"></span></a>  ';
+			else 
+				return ' <a class="btn btn-inicio-fin" title="Fin"><span class="glyphicon glyphicon-forward"></span></a>  ';
+		}			
+		break;
+
+		case 'Anterior':{
+			if ($activo)
+				return ' <a class="btn btn-anterior-siguiente" href="'.$url.'?pag='.$pag.'" title="Anterior Página"><span class="glyphicon glyphicon-chevron-left"></span></a>  ';
+			else 
+				return ' <a class="btn btn-anterior-siguiente" title="Anterior Página"><span class="glyphicon glyphicon-chevron-left"></span></a>  ';
+		}			
+		break;
+
+		case 'Siguiente':{
+			if ($activo)
+				return ' <a class="btn btn-anterior-siguiente" href="'.$url.'?pag='.$pag.'" title="Siguiente Página"><span class="glyphicon glyphicon-chevron-right"></span></a>  ';
+			else 
+				return ' <a class="btn btn-anterior-siguiente" title="Siguiente Página"><span class="glyphicon glyphicon-chevron-right"></span></a>  ';
+		}			
+		break;
+
+		case is_numeric($texto):{
+			if ($activo)
+				return '  <a class="btn btn-num-paginas" href="'.$url.'?pag='.$pag.'">'.$texto.'</a>  ';
+			else 
+				return '  <a class="btn btn-num-paginas" href="'.$url.'?pag='.$pag.'">'.$texto.'</a>  ';
+		}
+	    break;
+
+	    default:
+	    	return '<h1>ERROR</h1>';
+	    	break;
+	}
+	
 }
