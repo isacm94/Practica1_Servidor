@@ -24,8 +24,8 @@ function EscribeTarea($tareas){
 						echo '<td>'.$value.'</td>';
 			}
 
-			echo '<td> <a href="modificar.php?id='.$id.'">Modificar</a> </td>';
-
+			echo '<td> <a href="modificar.php?id='.$id.'">Modificar</a> ';
+			echo '<a href="eliminar.php?id='.$id.'">Eliminar</a> </td>';
 		echo '</tr>';
 	}
 	

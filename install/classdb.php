@@ -76,9 +76,9 @@ Class Db {
 	
 	public function Insertar($tabla, $registro){		
 	
-		$values=array();
+		$values = array();
 
-		$campos=array();
+		$campos = array();
 
 		foreach($registro as $campo => $valor)
 		{
@@ -87,9 +87,31 @@ Class Db {
 		}		
 		$sql = "INSERT INTO `".$tabla."`(".implode(',', $campos).") VALUES (".implode(',', $values).");";
 		
-		return $this->link->query($sql);
+		$rs=$this->link->query($sql);
+		if (! $rs ) {
+			$this->ShowError();
+		}
+		return $rs;
 	}
 
+	public function Modificar($tabla, $registro, $id){		
+	
+		$campos = array();
+
+		foreach($registro as $campo => $valor)
+		{
+			$campos[] ='`'.$campo.'` = "'.addslashes($valor).'" ';
+		}		
+
+		$set = implode(',', $campos);
+		$sql = "UPDATE `".$tabla."` SET $set WHERE id = $id";
+		
+		$rs=$this->link->query($sql);
+		if (! $rs ) {
+			$this->ShowError();
+		}
+		return $rs;
+	}
 	/**
 	 * Devuelve el siguiente registro del result set devuelto por una consulta.
 	 * 

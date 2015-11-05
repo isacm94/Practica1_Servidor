@@ -92,15 +92,18 @@ function VerError($campo, $errores){
  * @return string
  */
 function CreaSelect($name, $opciones, $valorDefecto='')
-{ 
+{ 	
+
 	$html="\n".'<select class="form-control" name="'.$name.'">';
-	foreach($opciones as $value=>$text)
+
+	foreach($opciones as $key=>$text)
 	{
-		if ($value==$valorDefecto)
-			$select='selected="selected"';
+		if ($key == $valorDefecto)			
+			$select ='selected="selected"';
+		
 		else
 			$select="";
-		$html.= "\n\t<option value=\"$value\" $select>$text</option>";
+		$html.= "\n\t<option value=$key $select>$text</option>";
 	}
 	$html.="\n</select>";
 
@@ -131,8 +134,11 @@ function CreaArrayTarea($descripcion, $pc, $tc, $correo, $dir, $pob, $cp, $codPr
 }
 
 //vista MODIFICAR
-function CreaRadio($name, $values){
+function CreaRadio($name, $values, $id){
 	
+	$valorGuardado = CargaDatos($id, $name);
+	
+
 	$html = '';
 	
 	$numRespuestas = count($values);
@@ -141,7 +147,7 @@ function CreaRadio($name, $values){
 		$html.= '<label class="radio-inline">';
 			$html.= '<input type="radio" name="'.$name.'" value="'.$key.'" ';
 			$html.= CheckIfValue($name, $key);
-			$html.= $key=='pendiente' ? ' checked ' : ''; //el primer radio chequeado
+			$html.= $value == $valorGuardado ? ' checked ' : '';
 		$html.='>'.$value.'</label>';
 	}
 	
@@ -166,6 +172,11 @@ function CargaDatos($id, $name){
 	
 	$tarea = GetUnaTarea($id);
 
-	return $tarea[0][$name];
 
+	if($name == 'fecha_realizacion'){
+		$dateRealizacion = new Datetime($tarea[0][$name]);
+		return date_format($dateRealizacion, 'd-m-Y');
+	}
+	else
+		return $tarea[0][$name];
 }

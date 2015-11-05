@@ -71,7 +71,7 @@
 			    <div class="form-group">
 			        <label class="control-label col-xs-3">Provincia:</label>
 			        <div class="col-xs-9">
-			    		<?php echo CreaSelect('tbl_provincias_cod', $Provincias)?>		
+			    		<?php echo CreaSelect('tbl_provincias_cod', $Provincias, CargaDatos($_GET['id'], 'tbl_provincias_cod')) ?>		
 			   		</div>
 			    </div>
 				
@@ -79,7 +79,7 @@
 				<div class="form-group">
 			        <label class="control-label col-xs-3">Estados:</label>
 			        <div class="col-xs-9">
-			        	<?= CreaRadio('estado', array('pendiente' => 'Pendiente', 'realizada' => 'Realizada', 'cancelada' => 'Cancelada'));?>
+			        	<?= CreaRadio('estado', array('pendiente' => 'Pendiente', 'realizada' => 'Realizada', 'cancelada' => 'Cancelada'), $_GET['id']);?>
 					</div>
 			    </div>
 			    
