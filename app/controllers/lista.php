@@ -95,17 +95,17 @@ function EnlaceAPagina($url, $pag, $texto, $activo=true)
 	switch ($texto) {
 		case 'Inicio':{
 			if ($activo)
-				return ' <a class="btn btn-inicio-fin" href="'.$url.'?pag='.$pag.'" title="Inicio"><span class="glyphicon glyphicon-backward"></span></a>  ';
+				return ' <a class="btn btn-inicio-fin" href="'.$url.'?pag='.$pag.'" title="Página Inicial"><span class="glyphicon glyphicon-backward"></span></a>  ';
 			else 
-				return ' <a class="btn btn-default"  title="Inicio"><span class="glyphicon glyphicon-backward"></span></a>  ';
+				return ' <a class="btn btn-default"  title="Página Inicial"><span class="glyphicon glyphicon-backward"></span></a>  ';
 		}			
 		break;
 		
 		case 'Fin':{
 			if ($activo)
-				return ' <a class="btn btn-inicio-fin" href="'.$url.'?pag='.$pag.'" title="Fin"><span class="glyphicon glyphicon-forward"></span></a>  ';
+				return ' <a class="btn btn-inicio-fin" href="'.$url.'?pag='.$pag.'" title="Página Final"><span class="glyphicon glyphicon-forward"></span></a>  ';
 			else 
-				return ' <a class="btn btn-inicio-fin" title="Fin"><span class="glyphicon glyphicon-forward"></span></a>  ';
+				return ' <a class="btn btn-inicio-fin" title="Página Final"><span class="glyphicon glyphicon-forward"></span></a>  ';
 		}			
 		break;
 
@@ -125,11 +125,11 @@ function EnlaceAPagina($url, $pag, $texto, $activo=true)
 		}			
 		break;
 
-		case is_numeric($texto):{
+		case is_numeric($texto):{ //Números de las paginas
 			if ($activo)
 				return '  <a class="btn btn-num-paginas" href="'.$url.'?pag='.$pag.'">'.$texto.'</a>  ';
 			else 
-				return '  <a class="btn btn-num-paginas" href="'.$url.'?pag='.$pag.'">'.$texto.'</a>  ';
+				return '  <a class="btn btn-num-paginas" href="'.$url.'?pag='.$pag.'" style="font: bold 15px sans-serif;">'.$texto.'</a>  ';
 		}
 	    break;
 
