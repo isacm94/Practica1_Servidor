@@ -91,10 +91,10 @@ function VerError($campo, $errores){
  * @param string $valorDefecto Valor seleccionado
  * @return string
  */
-function CreaSelect($name, $opciones, $valorDefecto='')
+function CreaSelect($name, $opciones, $valorDefecto='', $tamanho='')
 { 	
 
-	$html="\n".'<select class="form-control" name="'.$name.'">';
+	$html="\n".'<select class="form-control" name="'.$name.'" '.$tamanho.' >';
 
 	foreach($opciones as $key=>$text)
 	{

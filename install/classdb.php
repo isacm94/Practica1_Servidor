@@ -112,6 +112,17 @@ Class Db {
 		}
 		return $rs;
 	}
+
+	public function Eliminar($tabla, $id){		
+	
+		$sql = "DELETE FROM `$tabla` WHERE id=$id";
+		
+		$rs = $this->link->query($sql);
+		if (! $rs ) {
+			$this->ShowError();
+		}
+		return $rs;
+	}
 	/**
 	 * Devuelve el siguiente registro del result set devuelto por una consulta.
 	 * 

@@ -69,10 +69,11 @@ else {
 
 		//modificar en la bd 
 		$dateRealizacion = new Datetime($_POST['fecha_realizacion']);
+		$estado = ucwords($_POST['estado']);//Pone en mayusculas en la primera letra
 
 		$campos = CreaArrayTarea(	 
 				$_POST['descripcion'], $_POST['persona_contacto'], $_POST['telefono_contacto'], $_POST['correo_contacto'],
-				$_POST['direccion'], $_POST['poblacion'], $_POST['cp'], $_POST['tbl_provincias_cod'], $_POST['estado'], 
+				$_POST['direccion'], $_POST['poblacion'], $_POST['cp'], $_POST['tbl_provincias_cod'], $estado, 
 				$_POST['operario_encargado'],  date_format($dateRealizacion, 'Y-m-d'), 
 				$_POST['anotaciones_anteriores'], $_POST['anotaciones_posteriores']);
 		

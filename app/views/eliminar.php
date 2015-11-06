@@ -8,25 +8,23 @@
 
 		<!-- CSS PROPIO -->
 		<link rel="stylesheet" type="text/css" href="../../assets/css/estilos_alta.css">
+		<link rel="stylesheet" type="text/css" href="../../assets/css/estilos_paginador.css">
 </head>
 <body>
 
 	<br><br>
 
-	<form action="" method="GET">
+	<form action="" method="POST">
 			
 		<div class="container">
 			<div class="panel panel-default">
 				<div class="panel-body">
-
-				    
-					<!-- campooculto -> Guarda el id de la tarea a eliminar -->
 						
 					<label class="control-label">¿Desea eliminar esta tarea?</label>
 					
 					<div class="btn-group">
-						<!--<input type="submit" name="sieliminar" class="btn btn-comun" value="Sí"> -->
-						<a href="..\controllers\lista.php?id=".<?=$_GET['id']?>."&sieliminar=si" class="btn btn-comun">Sí</a>
+						<input type="submit" name="sieliminar" class="btn btn-comun" value="Sí"> 
+						<!--<a href="..\controllers\lista.php?id=".<?=$_GET['id']?>."&sieliminar=si" class="btn btn-comun">Sí</a>-->
 						<input type="submit" name="noeliminar" class="btn btn-comun" value="No">		
 					</div>				
 					<br><br>
