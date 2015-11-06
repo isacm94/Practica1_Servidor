@@ -95,7 +95,7 @@
 			    
 			    <div class="form-group">
 			        <div class="col-xs-offset-3 col-xs-9">
-			            <input type="submit" class="btn btn-enviar"value="Enviar">
+			            <input type="submit" class="btn btn-comun"value="Enviar">
 			        </div>
 			    </div>
 			</form>

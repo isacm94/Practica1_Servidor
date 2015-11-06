@@ -1,47 +1,47 @@
 /*btn enviar*/
-.btn-enviar { 
+.btn-comun { 
   color: #FFFFFF; 
   background-color: #2C3E50; 
-  border-color: #2C3E50; 
+  border-color: #fff; 
 } 
  
-.btn-enviar:hover, 
-.btn-enviar:focus, 
-.btn-enviar:active, 
-.btn-enviar.active, 
-.open .dropdown-toggle.btn-enviar { 
+.btn-comun:hover, 
+.btn-comun:focus, 
+.btn-comun:active, 
+.btn-comun.active, 
+.open .dropdown-toggle.btn-comun { 
   color: #FFFFFF; 
-  background-color: #2C3E50; 
-  border-color: #2C3E50; 
+  background-color: #384F66; 
+  border-color: #fff; 
 } 
  
-.btn-enviar:active, 
-.btn-enviar.active, 
-.open .dropdown-toggle.btn-enviar { 
+.btn-comun:active, 
+.btn-comun.active, 
+.open .dropdown-toggle.btn-comun { 
   background-image: none; 
 } 
  
-.btn-enviar.disabled, 
-.btn-enviar[disabled], 
-fieldset[disabled] .btn-enviar, 
-.btn-enviar.disabled:hover, 
-.btn-enviar[disabled]:hover, 
-fieldset[disabled] .btn-enviar:hover, 
-.btn-enviar.disabled:focus, 
-.btn-enviar[disabled]:focus, 
-fieldset[disabled] .btn-enviar:focus, 
-.btn-enviar.disabled:active, 
-.btn-enviar[disabled]:active, 
-fieldset[disabled] .btn-enviar:active, 
-.btn-enviar.disabled.active, 
-.btn-enviar[disabled].active, 
-fieldset[disabled] .btn-enviar.active { 
+.btn-comun.disabled, 
+.btn-comun[disabled], 
+fieldset[disabled] .btn-comun, 
+.btn-comun.disabled:hover, 
+.btn-comun[disabled]:hover, 
+fieldset[disabled] .btn-comun:hover, 
+.btn-comun.disabled:focus, 
+.btn-comun[disabled]:focus, 
+fieldset[disabled] .btn-comun:focus, 
+.btn-comun.disabled:active, 
+.btn-comun[disabled]:active, 
+fieldset[disabled] .btn-comun:active, 
+.btn-comun.disabled.active, 
+.btn-comun[disabled].active, 
+fieldset[disabled] .btn-comun.active { 
   background-color: #2C3E50; 
   border-color: #2C3E50; 
 } 
  
-.btn-enviar .badge { 
-  color: #2C3E50; 
+.btn-comun .badge { 
+  color: #fff; 
   background-color: #FFFFFF; 
 }
 

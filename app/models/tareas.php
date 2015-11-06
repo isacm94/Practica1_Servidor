@@ -55,6 +55,7 @@ function GetNumRegistrosTareas()
 	return $numRegistros['numRegistros'];
 }
 
+//Función que pasándole un id de una tarea te devuelve un array con sus datos
 function GetUnaTarea($id)
 {
 	/*Creamos la instancia del objeto. Ya estamos conectados*/
