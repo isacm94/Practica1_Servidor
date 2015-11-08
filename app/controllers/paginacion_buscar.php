@@ -6,13 +6,13 @@ define('APPCTRL', __DIR__);//directorio actual
 define('APPMOD', __DIR__.'\\..\\models\\');
 
 //Incluir modelo
-include_once APPMOD.'tareas.php';
+include_once APPMOD.'buscar.php';
 include_once APPMOD.'provincias.php';
 
 //PAGINACIÓN
 
 // Ruta URL desde la que ejecutamos el script
-$myURL='lista.php'; 
+$myURL='buscar.php'; 
 
 
 $nElementosxPagina = 10;
@@ -33,25 +33,28 @@ else
 $nReg = ($nPag-1) * $nElementosxPagina;
  
 $tareas = array();
-$tareas = GetTareas($nReg, $nElementosxPagina);
+$tareas = GetBusqueda($condicion, $nReg, $nElementosxPagina);
 
 
-$totalRegistros = GetNumRegistrosTareas();
+$totalRegistros = GetNumRegistrosBusqueda($condicion);
 
-$totalPaginas = $totalRegistros/$nElementosxPagina;
+if($totalRegistros > 0){
+	$totalPaginas = $totalRegistros/$nElementosxPagina;
 
-if(is_float($totalPaginas)){
-	$totalPaginas = intval($totalPaginas);
-	$totalPaginas++;
-}
-	
-//echo "<p>Nº Registros: $totalRegistros</p>";
+	if(is_float($totalPaginas)){
+		$totalPaginas = intval($totalPaginas);
+		$totalPaginas++;
+	}
+		
+	//echo "<p>Nº Registros: $totalRegistros</p>";
 
-//Muestra Formulario lista
-include_once '\\..\\views\\lista.php'; 
+	//Muestra Formulario lista
+	include_once '\\..\\views\\paginacion_buscar.php'; 
 
-if(!empty($tareas))//Solo lo muestra si existen datos
 	MuestraPaginador($nPag, $totalPaginas, $myURL);
+}
+else
+	include_once '\\..\\views\\noexistendatos_buscar.php';
 
 
 // -----------------------------------------------------------------------

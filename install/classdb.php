@@ -86,7 +86,7 @@ Class Db {
 			$campos[]='`'.$campo.'`';
 		}		
 		$sql = "INSERT INTO `".$tabla."`(".implode(',', $campos).") VALUES (".implode(',', $values).");";
-		
+				
 		$rs=$this->link->query($sql);
 		if (! $rs ) {
 			$this->ShowError();

@@ -11,15 +11,11 @@
 	<body>
 		<div>
 			<div class="col-xs-12">
-
-				<?php 
-					if(EMPTY($tareas))
-						include_once 'noexistendatos.php';
-					else {
-
-				?>
 				<div class="table-responsive ">
 					<br>
+
+					<h1>Número de Resultados: <?= $totalRegistros ?></h1>
+					
 				
 					<table class="table table-hover table-striped table-bordered">
 		  			
@@ -44,14 +40,12 @@
 			  					<th>Opciones</th>
 			  				</tr>
 
-			  				<?=EscribeTarea(GetTareas($nReg, $nElementosxPagina))?>
+			  				<?=EscribeTarea(GetBusqueda($condicion, $nReg, $nElementosxPagina))?>
 			  				
 			  			</tbody>
 
 		  			</table>
 				</div><!-- Fin div table-responsive -->
-
-				<?php } /*Fin ELSE*/?>
 				<br>
 			</div><!-- Fin div col-xs-12 -->
 		</div><!-- Fin div-->

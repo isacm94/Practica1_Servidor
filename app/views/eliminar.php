@@ -1,6 +1,6 @@
 <html>
 <head>
-		<title>Eliminar</title>
+		<title>Eliminar Tarea</title>
 		<meta charset="UTF-8">
 
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">

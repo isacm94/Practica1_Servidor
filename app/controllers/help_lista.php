@@ -2,11 +2,6 @@
 
 //Escribe los datos en la lista
 function EscribeTarea($tareas){
-
-/*
-	echo '<pre>';
-		print_r($tareas);
-	echo '</pre>';*/
 	foreach ($tareas as $key => $tarea) {
 		
 		echo '<tr>';
@@ -19,7 +14,11 @@ function EscribeTarea($tareas){
 						$id = $value;
 
 					else if($key == 'tbl_provincias_cod')//Para escribir el nombre de la provincia y no el código		
-						echo '<td>'.GetNombreProvincias($value).'</td>';	
+						echo '<td>'.GetNombreProvincias($value).'</td>';
+					else if($key == 'fecha_creacion' || $key == 'fecha_realizacion'){ //Cambiar formato a ddmmyyyy							
+						$date = new DateTime($value);
+						echo '<td>'.date_format($date, 'd-m-Y').'</td>';	
+					}
 					else 
 						echo '<td>'.$value.'</td>';
 			}

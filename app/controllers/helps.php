@@ -38,20 +38,27 @@ function FormatoCorrectoCP($cp)
 
 function FormatoFechaCorrecto($fecha){
 
+	/*
 	define('DIA', 0);
 	define('MES', 1);
-	define('YEAR', 2);
+	define('YEAR', 2);*/
+
+	$DIA = 0;
+	$MES = 1;
+	$YEAR = 2;
 
 	$array_fecha = explode("-", $fecha);
 
 	if (count($array_fecha)!= 3)
 		return FALSE;
+
 	else {
-	$dia = $array_fecha[DIA];
-	$mes = $array_fecha[MES];
-	$year = $array_fecha[YEAR];
-	
-	return checkdate($mes, $dia, $year);	 }	
+		$dia = $array_fecha[$DIA];
+		$mes = $array_fecha[$MES];
+		$year = $array_fecha[$YEAR];
+		
+		return checkdate($mes, $dia, $year);	
+	}	
 }
 function FechaCorrecta($fecha){
 	
@@ -70,8 +77,8 @@ function ValorPost($nombreCampo, $valorPorDefecto='')
 {
 	if (isset($_POST[$nombreCampo]))
 		return $_POST[$nombreCampo];
-		else
-			return $valorPorDefecto;
+	else
+		return $valorPorDefecto;
 }
 
 function VerError($campo, $errores){
@@ -91,18 +98,24 @@ function VerError($campo, $errores){
  * @param string $valorDefecto Valor seleccionado
  * @return string
  */
-function CreaSelect($name, $opciones, $valorDefecto='', $tamanho='')
+function CreaSelect($name, $opciones, /*$valorDefecto='',*/ $tamanho='')
 { 	
-
+	//Para guardar el valor si se ha elegido anteriormente
+	$valorElegido = '';	
+	if(isset($_POST[$name]))
+		$valorElegido = $_POST[$name];
+	
 	$html="\n".'<select class="form-control" name="'.$name.'" '.$tamanho.' >';
 
 	foreach($opciones as $key=>$text)
 	{
-		if ($key == $valorDefecto)			
+		//if ($key == $valorDefecto)	
+		if($valorElegido == $key)		
 			$select ='selected="selected"';
 		
 		else
 			$select="";
+
 		$html.= "\n\t<option value=$key $select>$text</option>";
 	}
 	$html.="\n</select>";
@@ -138,7 +151,6 @@ function CreaRadio($name, $values, $id){
 	
 	$valorGuardado = CargaDatos($id, $name);
 	
-
 	$html = '';
 	
 	$numRespuestas = count($values);
@@ -153,6 +165,7 @@ function CreaRadio($name, $values, $id){
 	
 	return $html;
 }
+
 
 //radioButton
 function CheckIfValue($nombreCampo, $valor)
