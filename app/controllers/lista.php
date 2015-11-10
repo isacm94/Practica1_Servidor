@@ -35,7 +35,6 @@ $nReg = ($nPag-1) * $nElementosxPagina;
 $tareas = array();
 $tareas = GetTareas($nReg, $nElementosxPagina);
 
-
 $totalRegistros = GetNumRegistrosTareas();
 
 $totalPaginas = $totalRegistros/$nElementosxPagina;

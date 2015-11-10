@@ -109,7 +109,7 @@
 							        <label class="control-label col-xs-3">Fecha Realización:</label>
 							        <div class="col-xs-9">
 							            <input type="text" class="form-control" placeholder="dd-mm-aaaa" name="fecha_realizacion" value="<?=CargaDatos($_GET['id'], 'fecha_realizacion')?>">
-							            <?=VerError('fechaRealizacion', $errores)?>
+							            <?=VerError('fecha_realizacion', $errores)?>
 							            <?=VerError('fechaRealizacionVacia', $errores)?>
 							        </div>
 							    </div>

@@ -18,8 +18,7 @@ function GetTareas($nReg, $nElementosxPagina)
 	$bd->Consulta($sql);
 	
 	// Creamos el array donde se guardarán las provincias
-	$tareas = Array();
-	
+	$tareas = Array();	
 	
 	/*Realizamos un bucle para ir obteniendo los resultados*/
 	while ($line = $bd->LeeRegistro())

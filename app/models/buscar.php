@@ -14,7 +14,7 @@ function GetBusqueda($condicion, $nReg, $nElementosxPagina)
 	/*Creamos una query sencilla*/
 	$sql = "SELECT * FROM `tarea` WHERE  $condicion LIMIT $nReg, $nElementosxPagina;";
 	
-	//echo "<pre>$sql</pre>";
+	echo "<pre>$sql</pre>";
 
 	/*Ejecutamos la query*/
 	$bd->Consulta($sql);

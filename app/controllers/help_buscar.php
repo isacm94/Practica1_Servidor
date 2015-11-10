@@ -67,10 +67,10 @@ function CreaCondicionConsulta(){
 	$condiciones = array();
 
 	if(! EMPTY($_POST['fecha_creacion']))
-		$condiciones['fc'] = 'fecha_creacion '. GetOperador($_POST['fechaC_operador']) . ' ' . CambiaFormatoFecha($_POST['fecha_creacion']);
+		$condiciones['fc'] = 'fecha_creacion '. GetOperador($_POST['fechaC_operador']) . ' "' . CambiaFormatoFecha($_POST['fecha_creacion']). '" ';
 
 	if(! EMPTY($_POST['fecha_realizacion']))
-		$condiciones['fr'] = 'fecha_realizacion ' . GetOperador($_POST['fechaR_operador']) . ' ' . CambiaFormatoFecha($_POST['fecha_realizacion']);
+		$condiciones['fr'] = 'fecha_realizacion ' . GetOperador($_POST['fechaR_operador']) . ' "' . CambiaFormatoFecha($_POST['fecha_realizacion']). '" ';
 
 	if($_POST['provincia'] != 'defecto')
 		$condiciones['prov'] = 'tbl_provincias_cod = '. $_POST['provincia'];
