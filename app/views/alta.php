@@ -1,22 +1,10 @@
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Añadir Tarea</title>
-		
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-		
-		<link rel="stylesheet" type="text/css" href="../../assets/css/estilos_alta.css">
-	</head>
-	<body>
-		
-		<br><br>
-				
+
 		<div class="container">		
 					
 			<div class="row">
 				<!-- 1ª COLUMNA -->
-				<div class="col-md-1"></div>
+				<div class="col-md-1">
+				</div>
 				<!-- 2ª COLUMNA -->
 				<div class="col-md-10">
 					
@@ -26,7 +14,7 @@
 
 						<div class="panel-body">
 						
-							<form class="form-horizontal" method="POST">
+							<form class="form-horizontal" action="index.php?ctrl=alta" method="POST">
 				
 								<div class="form-group">
 							        <label class="control-label col-xs-3">Descripción:</label>
@@ -122,8 +110,4 @@
 			</div> <!--Fin row-->
 
 		</div><!--fin container-->
-		
-			
-	
-	</body>
-</html>
+

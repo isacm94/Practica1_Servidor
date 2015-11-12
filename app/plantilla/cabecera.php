@@ -13,6 +13,7 @@
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../assets/bootstrap/css/freelancer.css" rel="stylesheet">
@@ -22,6 +23,15 @@
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+      <!--
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		-->
+		
+		
+	<link rel="stylesheet" type="text/css" href="../assets/css/estilos_alta.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/estilos_paginador.css">
+		
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,7 +41,7 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" text= "#000000">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -46,7 +56,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="controllers/alta.php?page=alta"><span class="glyphicon glyphicon-plus"></span> Añadir Tarea</a>
+                        <a href="?ctrl=alta"><span class="glyphicon glyphicon-plus"></span> Añadir Tarea</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about"><span class="glyphicon glyphicon-th-list"></span> Lista de Tareas</a>

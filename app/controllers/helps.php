@@ -84,8 +84,8 @@ function ValorPost($nombreCampo, $valorPorDefecto='')
 function VerError($campo, $errores){
 
 	if(isset($errores[$campo])){
-		echo '<div class="alert alert-danger">';
-			echo '<strong>¡Error! </strong>'.$errores[$campo];
+		echo '<div class="error"><p>';
+			echo '<p><strong>¡Error! </strong>'.$errores[$campo].'</p></p>';
 		echo '</div>';
 	}
 }

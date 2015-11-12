@@ -23,7 +23,7 @@ if(! $_POST){
 	include APPVIEW.'alta.php'; //formulario alta
 }
 else {
-	
+		
 	//ERRORES
 	if(empty($_POST['descripcion'])){
 		$errores['descripcion'] = 'Campo descripción vacío';
