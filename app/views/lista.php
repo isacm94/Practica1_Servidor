@@ -44,6 +44,7 @@
 
 							  			</table>
 									</div><!-- Fin div table-responsive -->
+									<br>
 						</div><!-- final col-xs-12 -->
 						<?php } /*Fin ELSE*/?>
 						<br>

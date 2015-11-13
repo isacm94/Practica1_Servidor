@@ -4,7 +4,7 @@ define('CTRL_PATH', __DIR__.'/controllers/');
 define('MODEL_PATH', __DIR__.'/models/');
 define('VIEW_PATH', __DIR__.'/views/');
 define('TEMPLATE_PATH', __DIR__.'/plantilla/');
-
+define('HELP_PATH', __DIR__.'/helpers/');
 
 include(TEMPLATE_PATH.'cabecera.php'); 
 ?>

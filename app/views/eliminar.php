@@ -1,36 +1,22 @@
-<html>
-<head>
-		<title>Eliminar Tarea</title>
-		<meta charset="UTF-8">
-
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-		<!-- CSS PROPIO -->
-		<link rel="stylesheet" type="text/css" href="../../assets/css/estilos_alta.css">
-		<link rel="stylesheet" type="text/css" href="../../assets/css/estilos_paginador.css">
-</head>
-<body>
-
-	<br><br>
-
-	<form action="" method="POST">
+<div class="container">		
+				
+	<div class="row">
+		<form action="" method="POST">
+				
 			
-		<div class="container">
-			<div class="panel panel-default">
-				<div class="panel-body">
+					<div class="panel-body" style="background-color: white; border-radius: 3px;">
+							
+						<label class="control-label">¿Desea eliminar esta tarea?</label>
 						
-					<label class="control-label">¿Desea eliminar esta tarea?</label>
-					
-					<div class="btn-group">
-						<input type="submit" name="sieliminar" class="btn btn-comun" value="Sí"> 
-						<!--<a href="..\controllers\lista.php?id=".<?=$_GET['id']?>."&sieliminar=si" class="btn btn-comun">Sí</a>-->
-						<input type="submit" name="noeliminar" class="btn btn-comun" value="No">		
-					</div>				
-					<br><br>
+						<div class="btn-group">
+							<input type="submit" name="sieliminar" class="btn btn-comun" value="Sí">							
+							<input type="submit" name="noeliminar" class="btn btn-comun" value="No">		
+						</div>				
 
-					<div class = "panel panel-default">
-					   <div class ="panel-heading"><h3 class="list-group-item-heading"><b>Tarea ID: <?= $tarea[0]['id']; ?></b></h3></div>
+						<br><br>
+
+						<div class = "panel panel-default">
+						   <div class ="panel-heading"><h3 class="list-group-item-heading"><b>Tarea ID: <?= $tarea[0]['id']; ?></b></h3></div>
 
 					    	<table class="table">
 				        		<tr>
@@ -112,20 +98,13 @@
 				        				<p><?= $tarea[0]['anotaciones_posteriores']; ?></p>
 				        			</td>
 				        		</tr>
-
-
 							</table>
 
+						</div> <!-- fin panel default -->
 
-					</div>
+					</div> <!--fin panel-body -->			
+			
+		</form> 
+	</div> <!-- fin row -->
+</div><!-- fin container -->
 
-
-
-				</div>
-			</div>
-		</div>
-	</form> 
-
-
-</body>
-</html>

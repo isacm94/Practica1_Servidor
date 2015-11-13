@@ -51,7 +51,7 @@ if($totalRegistros > 0){
 	//Muestra Formulario lista
 	include_once '\\..\\views\\paginacion_buscar.php'; 
 
-	MuestraPaginador($nPag, $totalPaginas, $myURL);
+	
 }
 else
 	include_once '\\..\\views\\noexistendatos_buscar.php';

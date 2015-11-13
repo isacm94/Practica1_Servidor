@@ -1,16 +1,3 @@
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-		
-		<link rel="stylesheet" type="text/css" href="../../assets/css/estilos_paginador.css">
-	</head>
-	<body>
-
-		<br><br>
 				
 		<div class="container">		
 					
@@ -37,6 +24,3 @@
 			</div> <!--Fin row-->
 
 		</div><!--fin container-->
-
-	</body>
-</html>

@@ -1,9 +1,9 @@
 <?php
-include_once "helps.php";
-include_once "help_buscar.php";
+include_once HELP_PATH.'helps.php';
+include_once HELP_PATH.'help_buscar.php';
 
 //Cargamos las provincias desde la bd para poder crear select en la vista
-include_once '\\..\\models\\provincias.php';
+include_once MODEL_PATH.'provincias.php';
 $Provincias = GetProvincias();
 
 $opciones_fecha = Array(
@@ -14,13 +14,13 @@ $opciones_fecha = Array(
 							'igual' => '=');
 
 //Cargamos modelo de a consulta de busqueda
-include_once '\\..\\models\\buscar.php';
+include_once MODEL_PATH.'buscar.php';
 
 $errores = Array();
 $correcto = TRUE;
 
 if(! $_POST){
-	include_once "\\..\\views\\buscar.php";
+	include_once VIEW_PATH.'buscar.php';
 }
 else{
 	
@@ -47,7 +47,7 @@ else{
 		$condicion = CreaCondicionConsulta();
 
 		if (! EMPTY($condicion)){ //Si se ha introducido algún campo de condición
-			include_once "\\..\\views\\buscar.php";
+			include_once VIEW_PATH.'buscar.php';
 			include_once "\\..\\controllers\\paginacion_buscar.php";
 		}
 		else{			
