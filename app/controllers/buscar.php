@@ -48,11 +48,11 @@ else{
 
 		if (! EMPTY($condicion)){ //Si se ha introducido algún campo de condición
 			include_once VIEW_PATH.'buscar.php';
-			include_once "\\..\\controllers\\paginacion_buscar.php";
+			include_once CTRL_PATH.'paginacion_buscar.php';
 		}
 		else{			
-			include_once "\\..\\views\\buscar.php";
-			include_once "\\..\\views\\algunacondicion_buscar.php";
+			include_once VIEW_PATH.'buscar.php';
+			include_once VIEW_PATH.'algunacondicion_buscar.php';
 		}
 	}
 }

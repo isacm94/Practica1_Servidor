@@ -1,18 +1,14 @@
 <?php
-include_once 'help_lista.php'; //funciones
-
-//define('APPVIEW', __DIR__.'\\..\\views\\');
-define('APPCTRL', __DIR__);//directorio actual
-define('APPMOD', __DIR__.'\\..\\models\\');
+include_once HELP_PATH.'help_lista.php';
 
 //Incluir modelo
-include_once APPMOD.'buscar.php';
-include_once APPMOD.'provincias.php';
+include_once MODEL_PATH.'buscar.php';
+include_once MODEL_PATH.'provincias.php';
 
 //PAGINACIÓN
 
 // Ruta URL desde la que ejecutamos el script
-$myURL='buscar.php'; 
+$myURL='?ctrl=buscar&'; 
 
 
 $nElementosxPagina = 10;
@@ -49,12 +45,12 @@ if($totalRegistros > 0){
 	//echo "<p>Nº Registros: $totalRegistros</p>";
 
 	//Muestra Formulario lista
-	include_once '\\..\\views\\paginacion_buscar.php'; 
+	include_once VIEW_PATH.'paginacion_buscar.php'; 
 
 	
 }
 else
-	include_once '\\..\\views\\noexistendatos_buscar.php';
+	include_once VIEW_PATH.'noexistendatos_buscar.php';
 
 
 // -----------------------------------------------------------------------

@@ -1,7 +1,6 @@
-				
-		<div class="container">		
+	
 					
-			<div class="row">
+			<div class="row" style="margin-top: 10%; margin-bottom: 10%;">
 				<!-- 1ª COLUMNA -->
 				<div class="col-md-1"></div>
 				<!-- 2ª COLUMNA -->
@@ -11,7 +10,7 @@
 
 						<div class="panel-body">
 
-							<h1 class="text-center text-warning"><b>NO EXISTEN DATOS GUARDADOS</b></h1>
+							<h3 class="text-center text-warning"><b>NO EXISTEN DATOS GUARDADOS</b></h3>
 							
 						</div><!-- fin panel body-->
 
@@ -22,5 +21,3 @@
 				<!-- 3ª COLUMNA -->
 				<div class="col-md-1"></div>
 			</div> <!--Fin row-->
-
-		</div><!--fin container-->

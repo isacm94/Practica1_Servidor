@@ -1,28 +1,24 @@
 <?php
-include_once 'helps.php'; //funciones
-
-define('APPVIEW', __DIR__.'\\..\\views\\');
-//define('APPCTRL', __DIR__);//directorio actual
-//define('APPMOD', __DIR__.'\\..\\models\\');
+include_once HELP_PATH.'helps.php'; //funciones
 
 $errores = Array();
 $correcto = TRUE;
 
 //Cargamos las provincias desde la bd para poder crear select en la vista
-include_once '\\..\\models\\provincias.php';
+include_once MODEL_PATH.'provincias.php';
 $Provincias = GetProvincias();
 
 //Cargamos el modelo de alta para hacer la insercción en la base de datos
-include_once '\\..\\models\\alta.php';
+include_once MODEL_PATH.'alta.php';
 
 //Cargamos el modelo de tarea para cargar los datos correspondientes a la tarea desde la base de datos
-include_once '\\..\\models\\tareas.php';
+include_once MODEL_PATH.'tareas.php';
 
 //Cargamos el modelo de modificar para modfificar una tarea en la base de datos
-include_once '\\..\\models\\modificar.php';
+include_once MODEL_PATH.'modificar.php';
 
 if(! $_POST){
-	include APPVIEW.'modificar.php'; //formulario alta
+	include VIEW_PATH.'modificar.php'; //formulario modificar
 }
 else {
 	
@@ -63,7 +59,7 @@ else {
 	
 	
 	if(! $correcto){
-		include APPVIEW.'modificar.php'; //formulario modificar
+		include VIEW_PATH.'modificar.php'; //formulario modificar
 	}
 	else{	
 
@@ -80,7 +76,7 @@ else {
 		ModificaTareaEnBD('tarea', $campos, $_GET['id']);
 		
 		//muestra lista		
-		include_once 'lista.php';
+		include CTRL_PATH.'lista.php'; //formulario modificar
 	}
 		
 

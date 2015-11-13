@@ -1,26 +1,26 @@
 <?php
 	
 	//incluimos modelo de tareas para mostar la tarea correspondiente
-	include_once '\\..\\models\\tareas.php'; 	
+	include_once MODEL_PATH.'tareas.php'; 		
 
 	//Obtenemos un array con los datos de la tarea
 	$tarea = Array();
 	$tarea = GetUnaTarea($_GET['id']);
 
 	//incluimos modelo de eliminar para borrar la tarea
-	include_once '\\..\\models\\eliminar.php'; 
+	include_once MODEL_PATH.'eliminar.php'; 
 
 	if(! $_POST){
-		include_once '\\..\\views\\eliminar.php'; //Mostramos vista con los datos de la tarea
+		include_once VIEW_PATH.'eliminar.php'; //Mostramos vista con los datos de la tarea
 	}
 	else{
 
 		if(isset($_POST['sieliminar'])){
 			EliminarEnBD($_GET['id']);		
-			include_once '\\..\\controllers\\lista.php';	
+			include_once CTRL_PATH.'lista.php';	
 		}
 		else if(isset($_POST['noeliminar'])){
-			include_once '\\..\\controllers\\lista.php';
+			include_once CTRL_PATH.'lista.php';
 		}
 	}
 

@@ -1,7 +1,4 @@
 
-				
-	
-					
 			<div class="row">
 				<!-- 1ª COLUMNA -->
 				<div class="col-md-1"></div>
@@ -24,4 +21,4 @@
 				<div class="col-md-1"></div>
 			</div> <!--Fin row-->
 
-
+		

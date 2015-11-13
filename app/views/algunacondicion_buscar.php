@@ -1,5 +1,4 @@
-				
-		<div class="container">		
+	
 					
 			<div class="row">
 				<!-- 1ª COLUMNA -->
@@ -22,6 +21,3 @@
 				<!-- 3ª COLUMNA -->
 				<div class="col-md-1"></div>
 			</div> <!--Fin row-->
-
-		</div><!--fin container-->
-
