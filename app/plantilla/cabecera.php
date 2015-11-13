@@ -41,12 +41,12 @@
 
 </head>
 
-<body id="page-top" class="index" text= "#000000">
+<body id="page-top" class="index" text="#000000">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand" href=""> <span class="glyphicon glyphicon-home"></span> Paco Garden</a>
+                <a class="navbar-brand" href="?ctrl=principal"> <span class="glyphicon glyphicon-home"></span> Home</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,10 +59,10 @@
                         <a href="?ctrl=alta"><span class="glyphicon glyphicon-plus"></span> Añadir Tarea</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about"><span class="glyphicon glyphicon-th-list"></span> Lista de Tareas</a>
+                        <a href="?ctrl=lista"><span class="glyphicon glyphicon-th-list"></span> Lista de Tareas</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact"><span class="glyphicon glyphicon-search"></span> Buscar</a>
+                        <a href="?ctrl=buscar"><span class="glyphicon glyphicon-search"></span> Buscar</a>
                     </li>
                 </ul>
             </div>

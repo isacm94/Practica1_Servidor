@@ -8,7 +8,7 @@
   color: #FFFFFF; 
   background-color: #2D3E50; 
   border-color: #FFFFFF; 
-  height: 34px;
+  height: 38px;
   width: 60px;
   margin: 5px 5px 5px 5px;
 } 
@@ -58,7 +58,7 @@ fieldset[disabled] .btn-inicio-fin.active {
   color: #FFFFFF; 
   background-color: #18BD90; 
   border-color: #FFFFFF; 
-  height: 34px;
+  height: 38px;
   width: 50px;
   margin: 5px 5px 5px 5px;
 } 
@@ -108,8 +108,8 @@ fieldset[disabled] .btn-anterior-siguiente.active {
   color: #18BD90; 
   background-color: #FFFFFF; 
   border-color: #18BD90; 
-  height: 34px;
-  width: 34px;
+  height: 38px;
+  width: 38px;
   margin: 5px 5px 5px 5px;
 } 
  

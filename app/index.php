@@ -10,7 +10,7 @@ include(TEMPLATE_PATH.'cabecera.php');
 ?>
 <!-- Cuerpo -->
 <!-- <header style="background-color: white; color: black;"> -->
-<header style="background-color: white; color: black;">
+<header style="color: black;">
 <!-- 
 	<div class="container">
 		<div class="row"> -->

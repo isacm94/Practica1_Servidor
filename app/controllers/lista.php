@@ -49,8 +49,6 @@ if(is_float($totalPaginas)){
 //Muestra Formulario lista
 include_once '\\..\\views\\lista.php'; 
 
-if(!empty($tareas))//Solo lo muestra si existen datos
-	MuestraPaginador($nPag, $totalPaginas, $myURL);
 
 
 // -----------------------------------------------------------------------
@@ -78,6 +76,8 @@ function MuestraPaginador($pag_actual, $nPags, $url)
 		
 		
 	echo "</div>";
+
+	
 }
 
 /**
