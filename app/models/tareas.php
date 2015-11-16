@@ -78,6 +78,28 @@ function GetUnaTarea($id)
 	return $tareas;
 }
 
+function GetExisteTarea($id){
+
+	/*Creamos la instancia del objeto. Ya estamos conectados*/
+	$bd = Db::getInstance();
+	
+	/*Creamos una query sencilla*/
+	$sql = 'SELECT count(*) as total FROM `tarea` where id='.$id;
+	
+	/*Ejecutamos la query*/
+	$bd->Consulta($sql);
+
+	/*Obtenemos resultado*/
+	$line = $bd->LeeRegistro();
+	
+	echo "<h1>".$line['total']."</h1>";
+
+	if($line['total'] > 0)
+		return true;
+	else
+		return false;
+}
+
 /*
 // OTRA FORMA que nos permitirá tener más de una consulta abierta
 

@@ -27,7 +27,7 @@ else
 
 // Calculamos el registro por el que se empieza en la sentencia LIMIT
 $nReg = ($nPag-1) * $nElementosxPagina;
- 
+
 $tareas = array();
 $tareas = GetBusqueda($condicion, $nReg, $nElementosxPagina);
 
