@@ -17,7 +17,7 @@
 							    <p>
 							    	<p style="font-size: 14pt;"><b>Fecha Creación</b></p>
 							    
-							    	<p><?php echo CreaSelect('fechaC_operador', $opciones_fecha,' style=" width: 70px;" ')?></p>
+							    	<p><?php echo CreaSelect('fechaC_operador', $opciones_fecha,' style=" width: 90px;" ')?></p>
 								</p>
 
 							    <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="fecha_creacion" value="<?=ValorPost('fecha_creacion')?>">
@@ -33,7 +33,7 @@
 							    <p>
 							    	<p style="font-size: 14pt;"><b>Fecha Realización</b></p>
 							    
-							    	<p><?php echo CreaSelect('fechaR_operador', $opciones_fecha, ' style=" width: 70px;" ')?></p>
+							    	<p><?php echo CreaSelect('fechaR_operador', $opciones_fecha, ' style=" width: 90px;" ')?></p>
 								</p>
 
 							    <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="fecha_realizacion" value="<?=ValorPost('fecha_realizacion')?>">

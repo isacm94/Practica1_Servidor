@@ -1,4 +1,10 @@
 <?php
+if($_POST)//Primera vez
+    $_SESSION['post'] = $_POST;
+
+else if(isset($_SESSION['post'])) //Resto de veces
+    $_POST = $_SESSION['post'];
+
 include_once HELP_PATH.'helps.php';
 include_once HELP_PATH.'help_buscar.php';
 

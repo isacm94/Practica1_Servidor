@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 // definimos constantes que facilitan el trabajo
 define('CTRL_PATH', __DIR__.'/controllers/');
 define('MODEL_PATH', __DIR__.'/models/');
@@ -25,6 +26,7 @@ include(TEMPLATE_PATH.'cabecera.php');
 					$file=CTRL_PATH.$ctrl.'.php';
 					if (file_exists($file))
 					{
+						echo $file;
 					    include($file);
 					}
 					else

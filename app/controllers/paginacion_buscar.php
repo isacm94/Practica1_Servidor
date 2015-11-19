@@ -6,10 +6,13 @@ include_once MODEL_PATH.'buscar.php';
 include_once MODEL_PATH.'provincias.php';
 
 //PAGINACIÓN
+if($_POST)//Primera vez
+     $_SESSION['post'] = $_POST;
+else //Resto de veces
+     $_POST = $_SESSION['post'];
 
 // Ruta URL desde la que ejecutamos el script
 $myURL='?ctrl=buscar&'; 
-
 
 $nElementosxPagina = 10;
 
@@ -95,7 +98,7 @@ function EnlaceAPagina($url, $pag, $texto, $activo=true)
 	switch ($texto) {
 		case 'Inicio':{
 			if ($activo)
-				return ' <a class="btn btn-inicio-fin" href="'.$url.'?pag='.$pag.'" title="Página Inicial"><span class="glyphicon glyphicon-backward"></span></a>  ';
+				return ' <a class="btn btn-inicio-fin" href="'.$url.'pag='.$pag.'" title="Página Inicial"><span class="glyphicon glyphicon-backward"></span></a>  ';
 			else 
 				return ' <a class="btn btn-default"  title="Página Inicial"><span class="glyphicon glyphicon-backward"></span></a>  ';
 		}			
@@ -103,7 +106,7 @@ function EnlaceAPagina($url, $pag, $texto, $activo=true)
 		
 		case 'Fin':{
 			if ($activo)
-				return ' <a class="btn btn-inicio-fin" href="'.$url.'?pag='.$pag.'" title="Página Final"><span class="glyphicon glyphicon-forward"></span></a>  ';
+				return ' <a class="btn btn-inicio-fin" href="'.$url.'pag='.$pag.'" title="Página Final"><span class="glyphicon glyphicon-forward"></span></a>  ';
 			else 
 				return ' <a class="btn btn-inicio-fin" title="Página Final"><span class="glyphicon glyphicon-forward"></span></a>  ';
 		}			
@@ -111,7 +114,7 @@ function EnlaceAPagina($url, $pag, $texto, $activo=true)
 
 		case 'Anterior':{
 			if ($activo)
-				return ' <a class="btn btn-anterior-siguiente" href="'.$url.'?pag='.$pag.'" title="Anterior Página"><span class="glyphicon glyphicon-chevron-left"></span></a>  ';
+				return ' <a class="btn btn-anterior-siguiente" href="'.$url.'pag='.$pag.'" title="Anterior Página"><span class="glyphicon glyphicon-chevron-left"></span></a>  ';
 			else 
 				return ' <a class="btn btn-anterior-siguiente" title="Anterior Página"><span class="glyphicon glyphicon-chevron-left"></span></a>  ';
 		}			
@@ -119,7 +122,7 @@ function EnlaceAPagina($url, $pag, $texto, $activo=true)
 
 		case 'Siguiente':{
 			if ($activo)
-				return ' <a class="btn btn-anterior-siguiente" href="'.$url.'?pag='.$pag.'" title="Siguiente Página"><span class="glyphicon glyphicon-chevron-right"></span></a>  ';
+				return ' <a class="btn btn-anterior-siguiente" href="'.$url.'pag='.$pag.'" title="Siguiente Página"><span class="glyphicon glyphicon-chevron-right"></span></a>  ';
 			else 
 				return ' <a class="btn btn-anterior-siguiente" title="Siguiente Página"><span class="glyphicon glyphicon-chevron-right"></span></a>  ';
 		}			
@@ -127,9 +130,9 @@ function EnlaceAPagina($url, $pag, $texto, $activo=true)
 
 		case is_numeric($texto):{ //Números de las paginas
 			if ($activo)
-				return '  <a class="btn btn-num-paginas" href="'.$url.'?pag='.$pag.'">'.$texto.'</a>  ';
+				return '  <a class="btn btn-num-paginas" href="'.$url.'pag='.$pag.'">'.$texto.'</a>  ';
 			else 
-				return '  <a class="btn btn-num-paginas" href="'.$url.'?pag='.$pag.'" style="font: bold 15px sans-serif;">'.$texto.'</a>  ';
+				return '  <a class="btn btn-num-paginas" href="'.$url.'pag='.$pag.'" style="font: bold 15px sans-serif;">'.$texto.'</a>  ';
 		}
 	    break;
 
