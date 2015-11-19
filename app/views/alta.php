@@ -15,38 +15,56 @@
 						<div class="panel-body">
 						
 							<form class="form-horizontal" action="index.php?ctrl=alta" method="POST">
-				
-								<div class="form-group">
-							        <label class="control-label col-xs-3">Descripción:</label>
-							        <div class="col-xs-9">
-							            <textarea rows="3" class="form-control" placeholder="Introduce la Descripción" name="descripcion"><?=ValorPost('descripcion')?></textarea>
-										<?=VerError('descripcion', $errores)?>
+								
+								
+								<div class="row">
+									<div class="col-md-11">								
+										<div class="form-group">
+								        <label class="control-label col-xs-3">Descripción:</label>
+								        <div class="col-xs-9">
+								            <textarea rows="3" class="form-control" placeholder="Introduce la Descripción" name="descripcion"><?=ValorPost('descripcion')?></textarea>
+											<?=VerError('descripcion', $errores)?>
+										</div>
+								    	</div>
+								    </div>
+								</div>
+							
+
+								<div class="row">
+									<div class="col-md-4" style="margin: 5px;">
+							    		<div class="form-group">
+									        <label>Persona de Contacto:</label>
+
+								            <input type="text" class="form-control" placeholder="Persona de Contacto" name="personaContacto" value="<?=ValorPost('personaContacto')?>">
+											<?=VerError('personaContacto', $errores)?>										 
+							    		</div>
+							    	</div>
+
+							    	<div class="col-md-3" style="margin: 5px;">
+							    		<div class="form-group">
+									        <label>Telefono de Contacto:</label>
+
+									        <input type="tel" class="form-control" placeholder="Telefono de Contacto" name="telefonoContacto" value="<?=ValorPost('telefonoContacto')?>">
+									        <?=VerError('telefonoContacto', $errores)?>			        
+									              
+									    </div>
+							    	</div>
+									
+									<div class="col-md-4" style="margin: 5px;">										
+										<div class="form-group">
+									        <label>Correo de Contacto: </label>
+
+								            <input type="email" class="form-control" placeholder="Correo de Contacto" name="correoContacto" value="<?=ValorPost('correoContacto')?>">
+											<?=VerError('correoContacto', $errores)?>											
+									    </div>								
 									</div>
+
 							    </div>
 								
-							    <div class="form-group">
-							        <label class="control-label col-xs-3">Persona de Contacto:</label>
-							        <div class="col-xs-9">
-							            <input type="text" class="form-control" placeholder="Introduce la Persona de Contacto" name="personaContacto" value="<?=ValorPost('personaContacto')?>">
-										<?=VerError('personaContacto', $errores)?>				   
-								   </div>
-							    </div>
 							    
-							    <div class="form-group">
-							        <label class="control-label col-xs-3" >Telefono de Contacto:</label>
-							        <div class="col-xs-9">
-							            <input type="tel" class="form-control" placeholder="Introduce el Telefono de Contacto" name="telefonoContacto" value="<?=ValorPost('telefonoContacto')?>">
-							        	<?=VerError('telefonoContacto', $errores)?>			        
-							        </div>       
-							    </div>
 							    
-							    <div class="form-group">
-							        <label class="control-label col-xs-3">Correo de Contacto: </label>
-							        <div class="col-xs-9">
-							            <input type="email" class="form-control" placeholder="Introduce un Correo de Contacto" name="correoContacto" value="<?=ValorPost('correoContacto')?>">
-										<?=VerError('correoContacto', $errores)?>
-									</div>
-							    </div>
+							    
+							    
 							    
 							    <div class="form-group">
 							        <label class="control-label col-xs-3">Dirección:</label>
