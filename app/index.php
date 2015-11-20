@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 // definimos constantes que facilitan el trabajo
 define('CTRL_PATH', __DIR__.'/controllers/');
