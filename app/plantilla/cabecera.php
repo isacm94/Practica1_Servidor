@@ -64,6 +64,10 @@
                     <li class="page-scroll">
                         <a href="?ctrl=buscar"><span class="glyphicon glyphicon-search"></span> Buscar</a>
                     </li>
+
+                    <li class="page-scroll">
+                        <a href="?ctrl=login"><span class="glyphicon glyphicon-user"></span> Login</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
