@@ -46,7 +46,7 @@ else{
 	}
 
 	if(! $correcto)
-		include_once "\\..\\views\\buscar.php";
+		include_once VIEW_PATH.'buscar.php';
 
 	else{
 			
