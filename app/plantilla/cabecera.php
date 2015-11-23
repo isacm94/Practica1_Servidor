@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <link rel="icon" type="image/png" href="../assets/bootstrap/img/profile.png" />
     <title>Paco Garden</title>    
@@ -20,8 +18,8 @@
 
     <!-- Custom Fonts -->
     <link href="../assets/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">		
+    <!--<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">	-->	
 		
     <link rel="stylesheet" type="text/css" href="../assets/css/estilos_alta.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/estilos_paginador.css">
@@ -42,7 +40,6 @@
                 <ul class="nav navbar-nav navbar-right" style=" float: right;">
                     
                     <?php
-                        session_start();
                         if(isset($_SESSION['loginok'])) :?>
                                 <span style=" float: right; color: #18BC9C;"> 
                                     <a href="?ctrl=cerrarsesion"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión,</a>    

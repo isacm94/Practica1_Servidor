@@ -78,14 +78,14 @@
 							    </div>
 								
 								<!--RADIOBUTTON ESTADOS-->
-								<div class="form-group">
+                                                            <div class="form-group">
 							        <label class="control-label col-xs-3">Estados:</label>
 							        <div class="col-xs-9">
 							        	<?= CreaRadio('estado', array('pendiente' => 'Pendiente', 'realizada' => 'Realizada', 'cancelada' => 'Cancelada'), $_GET['id']);?>
 									</div>
 							    </div>
 							    
-								<div class="form-group">
+							    <div class="form-group">
 							        <label class="control-label col-xs-3">Operario Encargado</label>
 							        <div class="col-xs-9">
 							            <input type="text" class="form-control" placeholder="Introduce el Operario Encargado" name="operario_encargado" value="<?=ValorPost('operario_encargado')?>">

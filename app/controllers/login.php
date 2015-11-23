@@ -7,15 +7,15 @@ if(! $_POST)
 else{
     
     
-    if(LoginOK($_POST['usuario'], $_POST['clave'])== TRUE){//Sesión correcta
-        session_start();
+    if(LoginOK($_POST['usuario'], $_POST['clave'])){//Sesión correcta
+        
         $_SESSION['usuario'] = $_POST['usuario'];
         $_SESSION['clave'] = $_POST['clave'];
         $_SESSION['loginok'] = "TRUE";   
         $_SESSION['horainicio'] = date('h:i:s');
 
         //include_once CTRL_PATH.'principal.php';
-         header('Location: index.php?ctrl=principal');  
+        header('Location: index.php?ctrl=principal');  
         
     }
     else{

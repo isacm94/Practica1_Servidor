@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if(! isset($_SESSION['loginok'])){
     
     include_once CTRL_PATH.'login.php';  

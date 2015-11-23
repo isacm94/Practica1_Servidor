@@ -1,8 +1,5 @@
 <?php
 
-/*Incluimos el fichero de la clase*/
-include_once '\\..\\..\\install\\classdb.php';
-
 /**
  * Inserta una tarea en la base de datos
  */

@@ -1,7 +1,4 @@
 <?php
-//define('APPCLASSDB', __DIR__.'\\..\\..\\install\\clasdb.php');
-/*Incluimos el fichero de la clase*/
-include_once '\\..\\..\\install\\classdb.php'; 
 
 /**
  * Devuelve un array con los datos de las provincias
@@ -11,7 +8,6 @@ function GetProvincias()
 	/*Creamos la instancia del objeto. Ya estamos conectados*/
 	$bd = Db::getInstance();
 	
-	/*Creamos una query sencilla*/
 	$sql = 'SELECT cod as cod, nombre as nom
 					FROM `tbl_provincias`';
 	
@@ -37,8 +33,8 @@ function GetNombreProvincias($cod){
 	
 	/*Creamos una query sencilla*/
 	$sql = 'SELECT nombre
-					FROM `tbl_provincias`
-						where cod='.$cod;
+                    FROM `tbl_provincias`
+                            where cod='.$cod;
 	
 	/*Ejecutamos la query*/
 	$bd->Consulta($sql);

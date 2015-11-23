@@ -1,7 +1,4 @@
-<?php
-//define('APPCLASSDB', __DIR__.'\\..\\..\\install\\clasdb.php');
-/*Incluimos el fichero de la clase*/
-include_once '\\..\\..\\install\\classdb.php'; 
+<?php 
 
 /**
  * Devuelve un array con los datos de tareas

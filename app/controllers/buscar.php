@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if(! isset($_SESSION['loginok'])){
     
@@ -21,11 +20,11 @@ else{
     $Provincias = GetProvincias();
 
     $opciones_fecha = Array(
-                                                            'mayor' => '>',
-                                                            'mayorigual' => '>=',
-                                                            'menor' => '<',
-                                                            'menorigual' => '<=',
-                                                            'igual' => '=');
+                            'mayor' => '>',
+                            'mayorigual' => '>=',
+                            'menor' => '<',
+                            'menorigual' => '<=',
+                            'igual' => '=');
 
     //Cargamos modelo de a consulta de busqueda
     include_once MODEL_PATH.'buscar.php';

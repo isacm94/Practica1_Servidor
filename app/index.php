@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 
 // definimos constantes que facilitan el trabajo
 define('CTRL_PATH', __DIR__.'/controllers/');
@@ -7,6 +7,9 @@ define('MODEL_PATH', __DIR__.'/models/');
 define('VIEW_PATH', __DIR__.'/views/');
 define('TEMPLATE_PATH', __DIR__.'/plantilla/');
 define('HELP_PATH', __DIR__.'/helpers/');
+
+/*Incluimos el fichero de la clase*/
+include_once '../install/classdb.php';
 
 include(TEMPLATE_PATH.'cabecera.php'); 
 ?>
