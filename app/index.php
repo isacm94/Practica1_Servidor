@@ -11,32 +11,24 @@ define('HELP_PATH', __DIR__.'/helpers/');
 include(TEMPLATE_PATH.'cabecera.php'); 
 ?>
 <!-- Cuerpo -->
-<!-- <header style="background-color: white; color: black;"> -->
 <header style="color: black;">
-<!-- 
-	<div class="container">
-		<div class="row"> -->
-			<!--  <div class="col-lg-12">-->
-				<?php
-				 
-					// Cuerpo del controlador frontal
-					$ctrl=isset($_GET['ctrl']) ? $_GET['ctrl'] : 'principal';
-					
-					// Nombre del fichero a incluir
-					$file=CTRL_PATH.$ctrl.'.php';
-					if (file_exists($file))
-					{
-						echo $file;
-					    include($file);
-					}
-					else
-					{   // Error 404
-					    include(CTRL_PATH.'error404.php');
-					}
-				?>
-			<!-- </div> 
-    	</div>
-	</div>-->
+    <?php
+
+            // Cuerpo del controlador frontal
+            $ctrl=isset($_GET['ctrl']) ? $_GET['ctrl'] : 'principal';
+
+            // Nombre del fichero a incluir
+            $file=CTRL_PATH.$ctrl.'.php';
+            if (file_exists($file))
+            {
+                    echo $file;
+                include($file);
+            }
+            else
+            {   // Error 404
+                include(CTRL_PATH.'error404.php');
+            }
+    ?>
 </header> 
 <?php 
 include(TEMPLATE_PATH.'pie.php');

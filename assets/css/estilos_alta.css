@@ -45,17 +45,4 @@ fieldset[disabled] .btn-comun.active {
   background-color: #FFFFFF; 
 }
 
-/*Mensaje error*/
-
-.msgerror {
-	word-wrap: break-word;
-}
-.error {
-   border: 1px solid #E8CCD1;
-   border-radius: 10px;
-   height: 50px;
-   background-color: #F2DEDE;
-   color: #B14D47;
-   font-size: 5pt; 
-}
 

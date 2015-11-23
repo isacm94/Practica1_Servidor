@@ -11,11 +11,15 @@ else{
         session_start();
         $_SESSION['usuario'] = $_POST['usuario'];
         $_SESSION['clave'] = $_POST['clave'];
-        $_SESSION['loginok'] = "TRUE";        
-        header('Location: index.php?ctrl=principal');  
+        $_SESSION['loginok'] = "TRUE";   
+        $_SESSION['horainicio'] = date('h:i:s');
+
+        //include_once CTRL_PATH.'principal.php';
+         header('Location: index.php?ctrl=principal');  
+        
     }
     else{
-        $loginok = FALSE;
+        $loginok = FALSE;//Variable usada para mostrar error en la vista
         include_once VIEW_PATH.'login.php';
     }
      

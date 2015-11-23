@@ -18,19 +18,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <!-- script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script-->
-    <!-- script src="../assets/bootstrap/js/classie.js"></script-->
-    <!-- script src="../assets/bootstrap/js/cbpAnimatedHeader.js"></script-->
-
-    <!-- Contact Form JavaScript -->
-    <!-- script src="../assets/bootstrap/js/jqBootstrapValidation.js"></script-->
-    <!-- <script src="../assets/bootstrap/js/contact_me.js"></script-->
-
-    <!-- Custom Theme JavaScript -->
-    <!-- script src="../assets/bootstrap/js/freelancer.js"></script-->
-
 </body>
 
 </html>

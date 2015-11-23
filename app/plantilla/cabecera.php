@@ -21,24 +21,10 @@
     <!-- Custom Fonts -->
     <link href="../assets/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-      <!--
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-		-->
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">		
 		
-		
-	<link rel="stylesheet" type="text/css" href="../assets/css/estilos_alta.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/estilos_paginador.css">
-		
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <link rel="stylesheet" type="text/css" href="../assets/css/estilos_alta.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/estilos_paginador.css">
 </head>
 
 <body id="page-top" class="index" text="#000000">
@@ -50,24 +36,35 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="?ctrl=alta"><span class="glyphicon glyphicon-plus"></span> Añadir Tarea</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="?ctrl=lista"><span class="glyphicon glyphicon-th-list"></span> Lista de Tareas</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="?ctrl=buscar"><span class="glyphicon glyphicon-search"></span> Buscar</a>
-                    </li>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                
+                   
+                    
+                <ul class="nav navbar-nav navbar-right" style=" float: right;">
+                    
+                    <?php
+                        session_start();
+                        if(isset($_SESSION['loginok'])) :?>
+                                <span style=" float: right; color: #18BC9C;"> 
+                                    <a href="?ctrl=cerrarsesion"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión,</a>    
+                                    <?php echo $_SESSION['horainicio']; ?> 
+                                </span>
+                            <br>
+                    <?php endif; ?>
+                   
+                        <li class="page-scroll">
+                            <a href="?ctrl=alta"><span class="glyphicon glyphicon-plus"></span> Añadir Tarea</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="?ctrl=lista"><span class="glyphicon glyphicon-th-list"></span> Lista de Tareas</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="?ctrl=buscar"><span class="glyphicon glyphicon-search"></span> Buscar</a>
+                        </li>
 
-                    <li class="page-scroll">
-                        <a href="?ctrl=login"><span class="glyphicon glyphicon-user"></span> Login</a>
-                    </li>
+                        <li class="page-scroll">
+                            <a href="?ctrl=login"><span class="glyphicon glyphicon-user"></span> Login</a>
+                        </li>
+                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

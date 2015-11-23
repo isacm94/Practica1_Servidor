@@ -4,7 +4,7 @@
 		<div class="col-md-4">			
                     <div class="well">
                         <form role="form" method="POST">
-                                            <h3>Login</h3>
+                                    <h3>Login</h3>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -23,7 +23,7 @@
                                     <?php 
                                           if(isset($loginok) && ! $loginok):?>
                                             <div class="alert alert-danger">
-                                                <b>¡Error!</b>
+                                                <b>¡Error!</b> Usuario o contraseña incorrectos
                                             </div> 
                                     <?php endif; ?>
                                 
