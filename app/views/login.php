@@ -29,11 +29,7 @@
                                 
                                 
                                 
-                                <input type="submit" name="login" value="Entrar" class="btn btn-comun">
-                                
-                                <br>
-                                <a href="?ctrl=altausuario"><u>Opciones de Administrador</u></a> 
-                                
+                                <input type="submit" name="login" value="Entrar" class="btn btn-comun">                               
                                 
                         </form>                   
 	    

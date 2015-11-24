@@ -20,11 +20,7 @@ a:hover {
 color: #2C3E50;/*azul oscuro*/
 text-decoration: none;
 }
-a:focus {
-   color: #2C3E50;/*azul oscuro*/
-   font-weight: bold;
-   font-size: 20px;
-}
+
 .nav-stacked>li {
 margin-top: 0px;
 margin-left: 0;
@@ -35,3 +31,6 @@ border:1px solid #dadada;
     border-right:4px solid #18BC9C;/*verde agua*/
 }
 
+.linkcerrarsesion:hover{
+    color: red;
+}

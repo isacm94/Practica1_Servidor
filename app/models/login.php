@@ -54,6 +54,26 @@ function ExisteUsuario($usuario){
         return false;
 }
 
+function ExisteUsuarioByID($id){
+    
+    $bd = Db::getInstance();
+	
+    $sql = "SELECT COUNT(*) as cont
+                    FROM `usuarios`
+                        WHERE `id` LIKE '$id'";
+
+    /*Ejecutamos la query*/
+    $bd->Consulta($sql);
+
+    /*Obtenemos los resultados*/
+    $cont = $bd->LeeRegistro();
+
+    if($cont['cont'] > 0)
+        return true;
+    else
+        return false;
+}
+
 function GetUsuarios(){
     /*Creamos la instancia del objeto. Ya estamos conectados*/
     $bd = Db::getInstance();
@@ -73,3 +93,86 @@ function GetUsuarios(){
     }
     return $usuarios;
 }
+
+function GetTipo($usuario){
+    /*Creamos la instancia del objeto. Ya estamos conectados*/
+    $bd = Db::getInstance();
+    
+    $sql = "SELECT tipo
+                FROM `usuarios`
+                    WHERE `usuario` LIKE '$usuario'";
+    
+    /*Ejecutamos la query*/
+    $bd->Consulta($sql);
+
+    // Creamos el array donde se guardarán las provincias
+    $usuarios = Array();	
+
+    $line = $bd->LeeRegistro();
+    
+    return $line['tipo'];
+}
+
+function GetUnUsuario($id){
+    /*Creamos la instancia del objeto. Ya estamos conectados*/
+    $bd = Db::getInstance();
+    
+    $sql = "SELECT usuario, clave
+                FROM `usuarios`
+                    WHERE `id`=$id";
+
+    /*Ejecutamos la query*/
+    $bd->Consulta($sql);
+
+    // Creamos el array donde se guardarán las provincias
+    $usuario = Array();	
+
+    /*Realizamos un bucle para ir obteniendo los resultados*/
+    while ($line = $bd->LeeRegistro())
+    {
+            $usuario[] = $line;	 
+    }
+    
+    return $usuario[0];
+}
+
+function ExisteNuevoNombreUsuario($nuevonombre, $id){
+    
+    $bd = Db::getInstance();
+	
+    $sql = "SELECT COUNT(*) as cont
+                    FROM `usuarios`
+                        WHERE `usuario` LIKE '$nuevonombre'
+                            AND `id` NOT LIKE '$id'";
+
+    /*Ejecutamos la query*/
+    $bd->Consulta($sql);
+
+    /*Obtenemos los resultados*/
+    $cont = $bd->LeeRegistro();
+
+    if($cont['cont'] > 0)
+        return true;
+    else
+        return false;
+}
+
+function ModificaUsuarioEnBD($registro, $id)
+{
+
+	/*Creamos la instancia del objeto. Ya estamos conectados*/
+	$bd = Db::getInstance();	
+
+	/*Ejecutamos la query*/
+	$bd->Modificar('usuarios', $registro, $id);
+}
+
+function EliminarUsuarioEnBD($id)
+{
+	/*Creamos la instancia del objeto. Ya estamos conectados*/
+	$bd = Db::getInstance();	
+
+	/*Ejecutamos la query*/
+	$bd->Eliminar('usuarios', $id);
+}
+

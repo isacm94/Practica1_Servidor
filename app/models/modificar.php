@@ -1,9 +1,7 @@
 <?php 
 
 
-/**
- * Inserta una tarea en la base de datos
- */
+
 function ModificaTareaEnBD($tabla, $registro, $id)
 {
 

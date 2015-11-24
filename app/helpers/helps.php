@@ -37,12 +37,6 @@ function FormatoCorrectoCP($cp)
 }
 
 function FormatoFechaCorrecto($fecha){
-
-	/*
-	define('DIA', 0);
-	define('MES', 1);
-	define('YEAR', 2);*/
-
 	$DIA = 0;
 	$MES = 1;
 	$YEAR = 2;
@@ -191,5 +185,5 @@ function CargaDatos($id, $name){
 		return date_format($dateRealizacion, 'd-m-Y');
 	}
 	else
-		return $tarea[0][$name];
+            return $tarea[0][$name];
 }

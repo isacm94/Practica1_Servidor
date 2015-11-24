@@ -27,6 +27,6 @@ else{
     
     else{
         AñadirUsuario($_POST['tipo'], $_POST['usuario'], $_POST['clave']);
-        //poner que vuelva a lista de usuarios
+        include_once CTRL_PATH.'listausuarios.php';
     }
 }

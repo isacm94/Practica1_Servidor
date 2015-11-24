@@ -13,9 +13,11 @@ else{
         $_SESSION['clave'] = $_POST['clave'];
         $_SESSION['loginok'] = "TRUE";   
         $_SESSION['horainicio'] = date('h:i:s');
+        $_SESSION['tipousuario'] = GetTipo($_POST['usuario']);
+        
 
         //include_once CTRL_PATH.'principal.php';
-        header('Location: index.php?ctrl=principal');  
+        header('Location: index.php');  
         
     }
     else{

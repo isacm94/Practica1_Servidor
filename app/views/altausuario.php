@@ -32,7 +32,7 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                            <input type="password" class="form-control" placeholder="Repite Contraseña" name="claverepetida"/>
+                                            <input type="password" class="form-control" placeholder="Confirme Contraseña" name="claverepetida"/>
                                         </div>
                                     </div>
                                

@@ -1,4 +1,8 @@
 <?php
+//Mostrar todos los errores
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 session_start();
 
 // definimos constantes que facilitan el trabajo
@@ -18,18 +22,18 @@ include(TEMPLATE_PATH.'cabecera.php');
     <?php
 
             // Cuerpo del controlador frontal
-            $ctrl=isset($_GET['ctrl']) ? $_GET['ctrl'] : 'principal';
+            $ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'principal';
 
             // Nombre del fichero a incluir
-            $file=CTRL_PATH.$ctrl.'.php';
+            $file = CTRL_PATH.$ctrl.'.php';
             if (file_exists($file))
             {
-                    echo $file;
-                include($file);
+                //echo $file;
+                include_once($file);
             }
             else
             {   // Error 404
-                include(CTRL_PATH.'error404.php');
+                include_once(CTRL_PATH.'error404.php');
             }
     ?>
 </header> 
