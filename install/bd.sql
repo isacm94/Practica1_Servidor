@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2015 a las 16:59:24
+-- Tiempo de generación: 24-11-2015 a las 13:22:45
 -- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- Versión de PHP: 5.5.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -42,24 +42,24 @@ CREATE TABLE IF NOT EXISTS `tarea` (
   `fecha_realizacion` date DEFAULT NULL,
   `anotaciones_anteriores` text,
   `anotaciones_posteriores` text
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tarea`
 --
 
 INSERT INTO `tarea` (`id`, `descripcion`, `persona_contacto`, `telefono_contacto`, `correo_contacto`, `direccion`, `poblacion`, `cp`, `tbl_provincias_cod`, `estado`, `fecha_creacion`, `operario_encargado`, `fecha_realizacion`, `anotaciones_anteriores`, `anotaciones_posteriores`) VALUES
-(1, 'Plantar flores', 'Javier García', 933452145, 'javier@garcia.com', 'Calle Plus Ultra, 36', 'Huelva Capital', 91448, '35', 'Realizada', '2015-11-16', '', '2017-02-07', 'Plantar las flores rápido', 'Regar'),
-(2, 'Regar las flores', 'Carlos Pérez García', 933452145, 'carlos@perez.com', 'Calle Almonte, 36', 'Almonte', 51248, '01', 'Realizada', '2015-11-16', '', '2017-08-07', 'Regar las flores rápido', 'Regar otra vez'),
-(3, 'Cortar las flores', 'Antonio Calvo', 933777145, 'antonio@calvo.com', 'Calle Placido Bañuelos, 17', 'Rociana', 51778, '07', 'Pendiente', '2015-11-16', '', '2017-08-01', 'Cortar las flores rápido', 'Cortar otra vez'),
-(4, 'Regar césped', 'Luca Betanzos Calvo', 945777123, 'luca@btzs.com', 'Calle Nueva, 19', 'Bollullos', 51744, '26', 'Pendiente', '2015-11-16', '', '2017-08-01', 'Regar césped rápido', 'Regar césped otra vez'),
-(5, 'Regar las flores', 'Carlos Mateos', 933452145, 'carlos@perez.com', 'Calle La Fuente, 36', 'Villarrasa', 45248, '30', 'Pendiente', '2015-11-16', '', '2017-08-07', 'Regar las flores rápido', 'Regar otra vez'),
-(6, 'Cortar las flores', 'Antonio Banderas', 933777145, 'antonio@banderas.com', 'Calle Larga, 1', 'Marbella', 51778, '23', 'Pendiente', '2015-11-16', '', '2017-08-01', 'Cortar las flores rápido', 'Cortar otra vez'),
-(7, 'Regar césped', 'Nora Betanzos Calvo', 941777123, 'nora@btzs.com', 'Calle Nueva, 19', 'Bonares', 51744, '26', 'Pendiente', '2015-11-16', '', '2017-08-01', 'Regar césped rápido', 'Regar césped otra vez'),
-(8, 'Regar las flores', 'José Mateos', 959452145, 'jose@mateos.com', 'Calle La Fuente, 36', 'Almonte', 45248, '30', 'Pendiente', '2015-11-16', '', '2016-06-07', 'Regar las flores rápido', 'Regar otra vez'),
-(9, 'Cortar las flores', 'Adán Candeas', 933777145, 'adan@candeas.com', 'Calle Larga, 1', 'Aroche', 51778, '23', 'Pendiente', '2015-11-16', '', '2016-05-01', 'Cortar las flores rápido', 'Cortar otra vez'),
-(10, 'Regar césped', 'Laura Carrasco Sánchez', 941777123, 'laura@carrasco.com', 'Calle Nueva, 23', 'Rociana', 51744, '17', 'Pendiente', '2015-11-16', '', '2017-10-04', 'Regar césped rápido', 'Regar césped otra vez'),
-(11, 'Regar césped', 'Susana Carrasco Sánchez', 941777123, 'susana@carrasco.com', 'Calle Nueva, 23', 'Rociana', 51744, '17', 'Pendiente', '2015-11-16', '', '2017-08-17', 'Regar césped rápido', 'Regar césped otra vez');
+(1, 'Plantar flores', 'Javier García', 933452145, 'javier@garcia.com', 'Calle Plus Ultra, 36', 'Huelva Capital', 91448, '35', 'Realizada', '2015-11-07', '', '2017-02-07', 'Plantar las flores rápido', 'hola'),
+(2, 'Regar las flores', 'Carlos Pérez', 933452145, 'carlos@perez.com', 'Calle Almonte, 36', 'Almonte', 51248, '30', 'Pendiente', '2015-11-07', '', '2017-08-07', 'Regar las flores rápido', 'Regar otra vez'),
+(3, 'Cortar las flores', 'Antonio Calvo', 933777145, 'antonio@calvo.com', 'Calle Placido Bañuelos, 17', 'Rociana', 51778, '21', 'Realizada', '2015-11-07', '', '2017-08-01', 'Cortar las flores rápido', 'Cortar otra vez'),
+(4, 'Regar césped', 'Luca Betanzos Calvo', 945777123, 'luca@btzs.com', 'Calle Nueva, 19', 'Bollullos', 51744, '01', 'Realizada', '2015-11-07', '', '2017-08-01', 'Regar césped rápido', 'Regar césped otra vez'),
+(5, 'Regar las flores', 'Carlos Mateos', 933452145, 'carlos@perez.com', 'Calle La Fuente, 36', 'Villarrasa', 45248, '30', 'Realizada', '2015-11-07', '', '2017-08-07', 'Regar las flores rápido', 'gpgppgpgpg'),
+(6, 'Cortar las flores', 'Antonio Banderas', 933777145, 'antonio@banderas.com', 'Calle Larga, 1', 'Marbella', 51778, '23', 'Pendiente', '2015-11-07', '', '2017-08-01', 'Cortar las flores rápido', 'Cortar otra vez'),
+(7, 'Regar césped', 'Nora Betanzos Calvo', 941777123, 'nora@btzs.com', 'Calle Nueva, 19', 'Bonares', 51744, '01', 'Realizada', '2015-11-07', '', '2017-08-01', 'Regar césped rápido', 'Regar césped otra vez'),
+(8, 'Regar las flores', 'José Mateos', 959452145, 'jose@mateos.com', 'Calle La Fuente, 36', 'Almonte', 45248, '30', 'Pendiente', '2015-11-10', '', '2016-06-07', 'Regar las flores rápido', 'Regar otra vez'),
+(9, 'Cortar las flores', 'Adán Candeas', 933777145, 'adan@candeas.com', 'Calle Larga, 1', 'Aroche', 51778, '23', 'Pendiente', '2015-11-10', '', '2016-05-01', 'Cortar las flores rápido', 'Cortar otra vez'),
+(10, 'Regar césped', 'Laura Carrasco Sánchez', 941777123, 'laura@carrasco.com', 'Calle Nueva, 23', 'Rociana', 51744, '17', 'Pendiente', '2015-11-10', '', '2017-10-04', 'Regar césped rápido', 'Regar césped otra vez'),
+(11, 'Regar césped', 'Susana Carrasco Sánchez', 941777123, 'susana@carrasco.com', 'Calle Nueva, 23', 'Rociana', 51744, '17', 'Pendiente', '2015-11-10', '', '2017-08-17', 'Regar césped rápido', 'Regar césped otra vez');
 
 --
 -- Disparadores `tarea`
@@ -151,14 +151,14 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `tipo` char(1) DEFAULT NULL,
   `usuario` varchar(25) DEFAULT NULL,
   `clave` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `tipo`, `usuario`, `clave`) VALUES
-(1, 'A', 'admin', 'admin');
+(1, 'A', 'admin1', 'admin1');
 
 --
 -- Índices para tablas volcadas
@@ -193,12 +193,12 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `tarea`
 --
 ALTER TABLE `tarea`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --

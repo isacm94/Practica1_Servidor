@@ -23,6 +23,7 @@
 		
     <link rel="stylesheet" type="text/css" href="../assets/css/estilos_alta.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/estilos_paginador.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/estilos_opcionesusuarios.css">
 </head>
 
 <body id="page-top" class="index" text="#000000">
@@ -49,17 +50,21 @@
                     <?php endif; ?>
                    
                         <li class="page-scroll">
-                            <a href="?ctrl=alta"><span class="glyphicon glyphicon-plus"></span> Añadir Tarea</a>
+                            <a href="?ctrl=alta" title="Añadir una tarea"><span class="glyphicon glyphicon-plus"></span> Añadir</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="?ctrl=lista"><span class="glyphicon glyphicon-th-list"></span> Lista de Tareas</a>
+                            <a href="?ctrl=lista" title="Lista de tareas"><span class="glyphicon glyphicon-th-list"></span> Lista</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="?ctrl=buscar"><span class="glyphicon glyphicon-search"></span> Buscar</a>
+                            <a href="?ctrl=buscar" title="Buscar tareas"><span class="glyphicon glyphicon-search"></span> Buscar</a>
                         </li>
 
                         <li class="page-scroll">
-                            <a href="?ctrl=login"><span class="glyphicon glyphicon-user"></span> Login</a>
+                            <a href="?ctrl=login" title="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        </li>
+                        
+                        <li class="page-scroll">
+                            <a href="?ctrl=listausuarios" title="Opciones de usuario"><span class="glyphicon glyphicon-cog"></span></a>
                         </li>
                    
                 </ul>

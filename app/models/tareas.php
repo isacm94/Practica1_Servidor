@@ -5,24 +5,24 @@
  */
 function GetTareas($nReg, $nElementosxPagina)
 {
-	/*Creamos la instancia del objeto. Ya estamos conectados*/
-	$bd = Db::getInstance();
-	
-	/*Creamos una query sencilla*/
-	$sql = 'SELECT  * FROM `tarea`  LIMIT '.$nReg.', '.$nElementosxPagina;
-	
-	/*Ejecutamos la query*/
-	$bd->Consulta($sql);
-	
-	// Creamos el array donde se guardarán las provincias
-	$tareas = Array();	
-	
-	/*Realizamos un bucle para ir obteniendo los resultados*/
-	while ($line = $bd->LeeRegistro())
-	{
-		$tareas[] = $line;	 
-	}
-	return $tareas;
+    /*Creamos la instancia del objeto. Ya estamos conectados*/
+    $bd = Db::getInstance();
+
+    
+    $sql = 'SELECT  * FROM `tarea`  LIMIT '.$nReg.', '.$nElementosxPagina;
+
+    /*Ejecutamos la query*/
+    $bd->Consulta($sql);
+
+    // Creamos el array donde se guardarán las provincias
+    $tareas = Array();	
+
+    /*Realizamos un bucle para ir obteniendo los resultados*/
+    while ($line = $bd->LeeRegistro())
+    {
+            $tareas[] = $line;	 
+    }
+    return $tareas;
 }
 /**
  * Devuelve el número de registros guardado en la bd
