@@ -6,7 +6,7 @@
                     <div class="footer-col col-md-12">
                         <h3>Copyright &copy;</h3>
                         <p>Isabel María Calvo Mateos</p>
-                        <p>Practica Servidor</p>
+                        <p>Práctica Servidor</p>
                 </div>
             </div>
         </div>

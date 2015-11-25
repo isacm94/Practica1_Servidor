@@ -136,6 +136,24 @@ function GetUnUsuario($id){
     return $usuario[0];
 }
 
+function GetID($usuario){
+    /*Creamos la instancia del objeto. Ya estamos conectados*/
+    $bd = Db::getInstance();
+    
+    $sql = "SELECT id
+                FROM `usuarios`
+                    WHERE `usuario` LIKE '$usuario'";
+    
+    /*Ejecutamos la query*/
+    $bd->Consulta($sql);
+
+    // Creamos el array donde se guardarán las provincias
+    $usuarios = Array();	
+
+    $line = $bd->LeeRegistro();
+    
+    return $line['id'];
+}
 function ExisteNuevoNombreUsuario($nuevonombre, $id){
     
     $bd = Db::getInstance();

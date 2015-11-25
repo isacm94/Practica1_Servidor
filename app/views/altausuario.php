@@ -3,15 +3,15 @@
         <div class="col-md-12">
             <div class="col-md-3 column">
                <ul class="nav nav-pills nav-stacked well">
-                   <li><a href="?ctrl=listausuarios"><span class="glyphicon glyphicon-chevron-right"></span> Listar</a></li>
+                   <li class="btn-opcionesusuario"> <a href="?ctrl=listausuarios" title="Ver lista de usuarios"><span class="glyphicon glyphicon-chevron-right"></span> Lista</a></li>
                    
-                   <li class="active"><a href="?ctrl=altausuario" class="active2">&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span> Añadir</a></li>
+                   <li class="active btn-opcionesusuario"><a href="?ctrl=altausuario" class="active2" title="Añadir usuario">&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span> Añadir</a></li>
                                     
                 </ul>
             </div>
-            <div class="col-md-9" style="border: 1px solid #dadada">
+            <div class="col-md-9" style="border: 1px solid #dadada; background-color: white; border-radius: 3px;">
                 <div class="col-md-3"></div>
-		<div class="col-md-5">	
+		<div class="col-md-5" >	
                         <form role="form" method="POST" action="?ctrl=altausuario">
                                     <h3>Añadir Usuario</h3>
                                     <div class="form-group">

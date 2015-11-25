@@ -14,7 +14,7 @@
                 <div class="col-md-2"></div>
 		<div class="col-md-7">	
                     <form action="" method="POST">
-                        <h4>¿Desea eliminar el usuario <i>"<?= EscribeCampoUsuario($_GET['id'], 'usuario')?>?"</i></h4>
+                        <h4>¿Desea eliminar el usuario <i>"<?= EscribeCampoUsuario($_GET['id'], 'usuario')?>"?</i></h4>
                             <br>
                             <div class="btn-group">
                                     <input type="submit" name="sieliminar" class="btn btn-comun" value="Sí">							

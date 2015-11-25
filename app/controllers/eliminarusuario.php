@@ -10,7 +10,7 @@ if(! ExisteUsuarioByID($_GET['id'])){
 else{
         
         if(! $_POST){
-                include_once VIEW_PATH.'eliminarusuario.php'; //Mostramos vista con los datos de la tarea
+            include_once VIEW_PATH.'eliminarusuario.php'; //Mostramos vista con los datos de la tarea
         }
         else{
 

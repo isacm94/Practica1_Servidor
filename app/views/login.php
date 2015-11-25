@@ -1,4 +1,5 @@
 <div class="container">	
+    <br>
 	<div class="row">	
 		<div class="col-md-4"></div>
 		<div class="col-md-4">			
@@ -35,7 +36,9 @@
 	    
                     </div><!-- final well -->	
 		</div> <!-- final col-md-4-->
+                
 	</div>
+    <br><br>
 </div><!-- final container -->
 
 

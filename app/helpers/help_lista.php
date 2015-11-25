@@ -24,13 +24,16 @@ function EscribeTarea($tareas){
 			}
 				
 			echo '<td>';
-
-				echo '<p><a href="?ctrl=completartarea&id='.$id.'" class="btn btn-primary btn-success" title="Completar tarea"><span class="glyphicon glyphicon-ok"></span></a></p>';
-
-				echo '<p><a href="?ctrl=modificar&id='.$id.'"class="btn btn-warning" title="Modificar Tarea"><span class="glyphicon glyphicon-pencil"></span></a></p>';
+                                
+                                if(isset($_SESSION['tipousuario'])&& $_SESSION['tipousuario'] == 'O'){
+                                    echo '<p><a href="?ctrl=completartarea&id='.$id.'" class="btn btn-primary btn-success" title="Completar tarea"><span class="glyphicon glyphicon-ok"></span></a></p>';
+                                }
+                                
+                                if(isset($_SESSION['tipousuario'])&& $_SESSION['tipousuario'] == 'A'){
+                                    echo '<p><a href="?ctrl=modificar&id='.$id.'"class="btn btn-warning" title="Modificar Tarea"><span class="glyphicon glyphicon-pencil"></span></a></p>';
 				
-				echo '<a href="?ctrl=eliminar&id='.$id.'" class="btn btn-danger" title="Eliminar Tarea"><span class="glyphicon glyphicon-trash"></span></a>';				
-
+                                    echo '<a href="?ctrl=eliminar&id='.$id.'" class="btn btn-danger" title="Eliminar Tarea"><span class="glyphicon glyphicon-trash"></span></a>';				
+                                }
 			echo '</td>';
 		echo '</tr>';
 	}

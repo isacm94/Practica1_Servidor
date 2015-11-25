@@ -21,6 +21,10 @@ color: #2C3E50;/*azul oscuro*/
 text-decoration: none;
 }
 
+.btn-opcionesusuario{
+background-color: white;
+}
+
 .nav-stacked>li {
 margin-top: 0px;
 margin-left: 0;

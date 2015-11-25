@@ -3,27 +3,28 @@
         <div class="col-md-12">
             <div class="col-md-3 column">
                <ul class="nav nav-pills nav-stacked well">
-                   <li class="active"><a href="?ctrl=listausuarios" class="active2"><span class="glyphicon glyphicon-chevron-right"></span> Listar</a></li>
+                   <li class="active btn-opcionesusuario"><a href="?ctrl=listausuarios" class="active2" title="Ver lista de usuarios"><span class="glyphicon glyphicon-chevron-right"></span> Lista</a></li>
                    
-                   <li><a href="?ctrl=altausuario">&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span> Añadir</a></li>
+                   <li class="btn-opcionesusuario"><a href="?ctrl=altausuario" title="Añadir usuario">&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span> Añadir</a></li>
                                     
                 </ul>
             </div>
-            <div class="col-md-9">
-                <h3>Lista de Usuarios</h3>
-                <table class="table table-striped table-bordered">
-                    <tr>
-                        <th>#ID</th>
-                        <th>Nombre de usuario</th>
-                        <th>Tipo</th>
-                        <th>Opciones</th>
-                    </tr>
-                    
-                    <?= EscribeUsuarios($usuarios);?>
-                    
-                </table>  
+            <div class="col-md-9" style="height: 300px;">
+                <div style="background-color: white; border-radius: 3px; padding: 5px;">
+                    <h3>Lista de Usuarios</h3>
+                    <table class="table table-striped table-bordered">
+                        <tr>
+                            <th>#ID</th>
+                            <th>Nombre de usuario</th>
+                            <th>Tipo</th>
+                            <th>Opciones</th>
+                        </tr>
+
+                        <?= EscribeUsuarios($usuarios);?>
+
+                    </table>  
 	    	
-		
+		</div>
             </div>
             
         </div>

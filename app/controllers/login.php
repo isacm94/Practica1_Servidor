@@ -10,11 +10,11 @@ else{
     if(LoginOK($_POST['usuario'], $_POST['clave'])){//Sesión correcta
         
         $_SESSION['usuario'] = $_POST['usuario'];
-        $_SESSION['clave'] = $_POST['clave'];
+        //$_SESSION['clave'] = $_POST['clave'];
         $_SESSION['loginok'] = "TRUE";   
         $_SESSION['horainicio'] = date('h:i:s');
         $_SESSION['tipousuario'] = GetTipo($_POST['usuario']);
-        
+        $_SESSION['idusuario'] = GetID($_POST['usuario']);     
 
         //include_once CTRL_PATH.'principal.php';
         header('Location: index.php');  

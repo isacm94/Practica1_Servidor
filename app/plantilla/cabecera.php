@@ -1,4 +1,3 @@
-
 <head>
 
     <meta charset="utf-8">
@@ -7,7 +6,7 @@
     <title>Paco Garden</title>   
     
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">    
 
     <!-- Custom CSS -->
     <link href="../assets/bootstrap/css/freelancer.css" rel="stylesheet">
@@ -50,15 +49,17 @@
                                 </span>
                                 <br>
                                 <span style=" float: right; color: #18BC9C;"> 
-                                    <a href="?ctrl=cerrarsesion"  style="color: #18BC9C;"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión,</a>    
+                                    <a href="?ctrl=cerrarsesion" style="color: #18BC9C;"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión,</a>    
                                     <?php echo $_SESSION['horainicio']; ?> 
                                 </span>
                             <br>
                     <?php endif; ?>
                    
+                     <?php if(isset($_SESSION['tipousuario'])&& $_SESSION['tipousuario'] == 'A'):?>
                         <li class="page-scroll">
                             <a href="?ctrl=alta" title="Añadir una tarea"><span class="glyphicon glyphicon-plus"></span> Añadir</a>
                         </li>
+                    <?php endif;?>
                         <li class="page-scroll">
                             <a href="?ctrl=lista" title="Lista de tareas"><span class="glyphicon glyphicon-th-list"></span> Lista</a>
                         </li>
@@ -75,7 +76,13 @@
                                 <li class="page-scroll">
                                     <a href="?ctrl=listausuarios" title="Opciones de usuario"><span class="glyphicon glyphicon-cog"></span></a>
                                 </li>
-                        <?php endif; ?>
+                        <?php endif;?>
+                                
+                        <?php if(isset($_SESSION['tipousuario'])&& $_SESSION['tipousuario'] == 'O'):?>
+                                <li class="page-scroll">
+                                    <a href="?ctrl=modificarusuarioOPE&id=<?=$_SESSION['idusuario']?>" title="Opciones de usuario"><span class="glyphicon glyphicon-cog"></span></a>
+                                </li>
+                        <?php endif;?>
                    
                 </ul>
             </div>
