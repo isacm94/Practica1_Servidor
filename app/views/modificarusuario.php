@@ -9,7 +9,7 @@
                                     
                 </ul>
             </div>
-            <div class="col-md-9" style="border: 1px solid #dadada">
+            <div class="col-md-9" style="border: 1px solid #dadada; background-color: white; border-radius: 3px;">
                 <div class="col-md-3"></div>
 		<div class="col-md-5">	
                         <form role="form" method="POST" action="?ctrl=modificarusuario&id=<?= $_GET['id']?>">

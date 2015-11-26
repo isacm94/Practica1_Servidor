@@ -10,7 +10,7 @@
                 </ul>
             </div>
             <br>
-            <div class="col-md-9" style="border: 1px solid #dadada">
+            <div class="col-md-9" style="border: 1px solid #dadada; background-color: white; border-radius: 3px;">
                 <div class="col-md-2"></div>
 		<div class="col-md-7">	
                     <form action="" method="POST">
