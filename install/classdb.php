@@ -1,8 +1,7 @@
 <?php
 
-//define('APPCONFIG', __DIR__.'\\..\\app\\config.php');
 // Datos de configuración.
-include_once '\\..\\app\\config.php';
+include_once '/../app/config.php';
 
 /* Clase encargada de gestionar las conexiones a la base de datos */
 Class Db {
