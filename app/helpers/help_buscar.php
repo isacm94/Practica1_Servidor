@@ -78,7 +78,7 @@ function CreaCondicionConsulta(){
 	if(! EMPTY($_POST['telefono']))
 		$condiciones['telefono'] = 'telefono_contacto LIKE "'. $_POST['telefono'] . '%"';
 
-	if(! EMPTY($_POST['estado']))
+	if(! EMPTY($_POST['estado']) && $_POST['estado'] != 'defecto')
 		$condiciones['estado'] = 'estado LIKE "' . $_POST['estado'] . '"';	
 
 	return  implode(' AND ', $condiciones);	

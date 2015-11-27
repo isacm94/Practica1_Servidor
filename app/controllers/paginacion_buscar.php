@@ -34,7 +34,6 @@ $nReg = ($nPag-1) * $nElementosxPagina;
 $tareas = array();
 $tareas = GetBusqueda($condicion, $nReg, $nElementosxPagina);
 
-
 $totalRegistros = GetNumRegistrosBusqueda($condicion);
 
 if($totalRegistros > 0){
@@ -44,8 +43,6 @@ if($totalRegistros > 0){
 		$totalPaginas = intval($totalPaginas);
 		$totalPaginas++;
 	}
-		
-	//echo "<p>Nº Registros: $totalRegistros</p>";
 
 	//Muestra Formulario lista
 	include_once VIEW_PATH.'paginacion_buscar.php'; 

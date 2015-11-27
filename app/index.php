@@ -12,31 +12,44 @@ define('VIEW_PATH', __DIR__.'/views/');
 define('TEMPLATE_PATH', __DIR__.'/plantilla/');
 define('HELP_PATH', __DIR__.'/helpers/');
 
-/*Incluimos el fichero de la clase*/
-include_once '../install/classdb.php';
+if(! file_exists('config.php')){
+    include(TEMPLATE_PATH.'cabecera.php');
 
-include(TEMPLATE_PATH.'cabecera.php'); 
-?>
-<!-- Cuerpo -->
-<header style="color: black;">
-    <?php
+    echo '<header style="color: black;">';
+        include(CTRL_PATH.'setup.php');
+    echo '</header>';
 
-            // Cuerpo del controlador frontal
-            $ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'principal';
+    include(TEMPLATE_PATH.'pie.php');
+}
+else {
 
-            // Nombre del fichero a incluir
-            $file = CTRL_PATH.$ctrl.'.php';
-            if (file_exists($file))
-            {
-                //echo $file;
-                include_once($file);
-            }
-            else
-            {   // Error 404
-                include_once(CTRL_PATH.'error404.php');
-            }
+    /*Incluimos el fichero de la clase*/
+    include_once '../install/classdb.php';
+
+    include(TEMPLATE_PATH.'cabecera.php'); 
     ?>
-</header> 
-<?php 
-include(TEMPLATE_PATH.'pie.php');
-?>
+    <!-- Cuerpo -->
+    
+        <?php
+
+                // Cuerpo del controlador frontal
+                $ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'principal';
+
+                // Nombre del fichero a incluir
+                $file = CTRL_PATH.$ctrl.'.php';
+                if (file_exists($file))
+                {
+                    //echo $file;
+                    include_once($file);
+                }
+                else
+                {   // Error 404
+                    include_once(CTRL_PATH.'error404.php');
+                }
+        ?>
+    </header> 
+    <?php 
+    include(TEMPLATE_PATH.'pie.php');
+   
+}
+ ?>

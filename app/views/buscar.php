@@ -37,26 +37,18 @@
                     </div>
 
                     <!-- 3ª COLUMNA -->
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group" style="font-size: 13pt;">
 
                             <p style="font-size: 14pt;"><b>Estado</b></p>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="estado" value="pendiente"> Pendiente
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="estado" value="realizada"> Realizada
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="estado" value="cancelada"> Cancelada
-                            </label>
-                           <!-- <p><?= CreaRadioBuscar('estado', array('pendiente' => 'Pendiente', 'realizada' => 'Realizada', 'cancelada' => 'Cancelada'));?></p>
-                            -->
+                            
+                            <p><?php echo CreaSelectCon1ValorVacio('estado', array('pendiente' => 'Pendiente', 'realizada' => 'Realizada', 'cancelada' => 'Cancelada'))?> </p>
+
                         </div>								
                     </div>
 
                     <!-- 4ª COLUMNA -->
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="form-group">
 
                             <p style="font-size: 14pt;"><b>Provincia</b></p>
@@ -86,7 +78,7 @@
 
                 <!-- BOTON BUSCAR -->
                 <p>
-                        <button type="submit" class="btn btn-block btn-comun"><span class="glyphicon glyphicon-search"></span> Búsqueda</button>
+                    <button type="submit" class="btn btn-block btn-comun"><span class="glyphicon glyphicon-search"></span> Búsqueda</button>
                 </p>
             </div><!-- fin panel-body -->
         </div> <!-- fin panel-default -->		

@@ -42,8 +42,8 @@ else{
     $totalPaginas = $totalRegistros/$nElementosxPagina;
 
     if(is_float($totalPaginas)){
-            $totalPaginas = intval($totalPaginas);
-            $totalPaginas++;
+        $totalPaginas = intval($totalPaginas);
+        $totalPaginas++;
     }
 
     //echo "<p>Nº Registros: $totalRegistros</p>";

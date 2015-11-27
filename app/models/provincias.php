@@ -33,8 +33,8 @@ function GetNombreProvincias($cod){
 	
 	/*Creamos una query sencilla*/
 	$sql = 'SELECT nombre
-                    FROM `tbl_provincias`
-                            where cod='.$cod;
+                FROM `tbl_provincias`
+                        where cod='.$cod;
 	
 	/*Ejecutamos la query*/
 	$bd->Consulta($sql);
