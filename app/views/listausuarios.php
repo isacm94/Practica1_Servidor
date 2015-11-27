@@ -14,7 +14,6 @@
                     <h3>Lista de Usuarios</h3>
                     <table class="table table-striped table-bordered">
                         <tr>
-                            <th>#ID</th>
                             <th>Nombre de usuario</th>
                             <th>Tipo</th>
                             <th>Opciones</th>

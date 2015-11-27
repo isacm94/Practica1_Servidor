@@ -5,11 +5,11 @@ function CreaRadioBuscar($name, $values){
 	
 	$numRespuestas = count($values);
 		
-	foreach ($values as $key => $value) {	
+	foreach ($values as $key => $text) {	
 		$html.= '<label class="radio-inline">';
 			$html.= '<input type="radio" name="'.$name.'" value="'.$key.'" ';
 			$html.= CheckIfValue($name, $key);
-		$html.='>'.$value.'</label>';
+		$html.='>'.$text.'</label>';
 	}
 	
 	return $html;

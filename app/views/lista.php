@@ -10,6 +10,7 @@
         <div class="panel-default" style="background-color: white; border-radius: 3px;">
                 <div class="panel-heading"><h3 class="list-group-item-heading"><b>Listado de Tareas</b></h3></div>
                 <div class="panel-body">
+                    <h3 class="list-group-item-heading" style="float: left; color: #2C3E50;"><b>Número de Resultados: <?= $totalRegistros ?></b></h3>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-responsive">
@@ -20,7 +21,6 @@
                                         <tbody>
 
                                             <tr>
-                                                    <th>#ID</th>
                                                     <th>Descripción</th>
                                                     <th>Persona</th>
                                                     <th>Teléfono</th>

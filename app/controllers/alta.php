@@ -1,11 +1,15 @@
 <?php
 
-if(! isset($_SESSION['loginok'])){
+if(! isset($_SESSION['loginok'])){ //Si no está iniciada la sesión muestra el login
     
     include_once CTRL_PATH.'login.php';  
    
 }
-else{
+else if($_SESSION['tipousuario'] != 'A'){//Sólo puede añadir administradores
+    
+    include_once CTRL_PATH.'error404.php';
+}
+else {
     include_once HELP_PATH.'helps.php';
     include_once HELP_PATH.'help_lista.php';
 

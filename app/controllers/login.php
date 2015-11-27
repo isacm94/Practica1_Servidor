@@ -10,7 +10,6 @@ else{
     if(LoginOK($_POST['usuario'], $_POST['clave'])){//Sesión correcta
         
         $_SESSION['usuario'] = $_POST['usuario'];
-        //$_SESSION['clave'] = $_POST['clave'];
         $_SESSION['loginok'] = "TRUE";   
         $_SESSION['horainicio'] = date('h:i:s');
         $_SESSION['tipousuario'] = GetTipo($_POST['usuario']);
