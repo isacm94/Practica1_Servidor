@@ -1,29 +1,15 @@
 <?php
 
 /**
- * Inserta una tarea en la base de datos
+ * Función que añade una tarea a la base de datos
+ * @param String $tarea Nombre de la tabla donde se añade 
+ * @param Array $registro Datos que
  */
 function InsertaTareaEnBD($tarea, $registro)
 {
+    /*Creamos la instancia del objeto. Ya estamos conectados*/
+    $bd = Db::getInstance();	
 
-	/*Creamos la instancia del objeto. Ya estamos conectados*/
-	$bd = Db::getInstance();	
-
-	/*Ejecutamos la query*/
-	$bd->Insertar($tarea, $registro);
+    /*Ejecutamos la query*/
+    $bd->Insertar($tarea, $registro);
 }
-
-
-/*
- // OTRA FORMA que nos permitirá tener más de una consulta abierta
-
- /*Ejecutamos la query*/
-//$rs=$bd->Consulta($sql);
-
-/*Realizamos un bucle para ir obteniendo los resultados*/
-/*
- while ($reg=$bd->LeeRegistro($rs))
- {
- echo $reg['NOMBRE'].'<br />';
- }
- */

@@ -1,108 +1,131 @@
 <?php
-function CreaRadioBuscar($name, $values){
-	
-	$html = '';
-	
-	$numRespuestas = count($values);
-		
-	foreach ($values as $key => $text) {	
-		$html.= '<label class="radio-inline">';
-			$html.= '<input type="radio" name="'.$name.'" value="'.$key.'" ';
-			$html.= CheckIfValue($name, $key);
-		$html.='>'.$text.'</label>';
-	}
-	
-	return $html;
-}
 
 /**
- *
  * @param string $name Nombre del campo
  * @param array $opciones Opciones que tiene el select
  * 			clave array=valor option
  * 			valor array=texto option
  * @param string $valorDefecto Valor seleccionado
- * @return string
+ * @return string Código HTML generado
  */
 function CreaSelectCon1ValorVacio($name, $opciones, $valorDefecto='', $tamanho='')
 { 	
-	$valorElegido = '';
+    $valorElegido = '';
 
-	if(isset($_POST[$name]))
-		$valorElegido = $_POST[$name];
+    if(isset($_POST[$name]))
+            $valorElegido = $_POST[$name];
 
-	$html="\n".'<select class="form-control" name="'.$name.'" '.$tamanho.' >';
+    $html="\n".'<select class="form-control" name="'.$name.'" '.$tamanho.' >';
 
-	$html.= "\n\t<option value='defecto' selected></option>";
+    $html.= "\n\t<option value='defecto' selected></option>";
 
-	foreach($opciones as $key=>$text)
-	{
-		//if ($key == $valorDefecto)	
-		if($valorElegido == $key)		
-			$select ='selected="selected"';
-		
-		else
-			$select="";
+    foreach($opciones as $key=>$text)
+    {   
+        if($valorElegido == $key)		
+            $select ='selected="selected"';
 
-		$html.= "\n\t<option value=$key $select>$text</option>";
-	}
-	$html.="\n</select>";
+        else
+                $select="";
 
-	return $html;
+        $html.= "\n\t<option value=$key $select>$text</option>";
+    }
+
+    $html.="\n</select>";
+
+    return $html;
 }
 
+/**
+ * Función que muestra un mensaje por cada error producido
+ * @param Array $errores Errores producidos
+ */
 function MuestraError($errores){
 
-	echo '<div class="alert alert-danger">';
+    echo '<div class="alert alert-danger">';
 
-	foreach ($errores as $key => $value) {
-		echo "<b>¡Error!</b> $value<br>";
-	}
+        foreach ($errores as $key => $value) {
+                echo "<b>¡Error!</b> $value<br>";
+        }
 
-	echo '</div>';
+    echo '</div>';
 }
 
+/**
+ * Función que genera una condición, a ejecutar en una consulta de tareas, según los campos escogidos
+ * @return String Condición generada
+ */
 function CreaCondicionConsulta(){
 
-	$condiciones = array();
+    $condiciones = array();
 
-	if(! EMPTY($_POST['fecha_creacion']))
-		$condiciones['fc'] = 'fecha_creacion '. GetOperador($_POST['fechaC_operador']) . ' "' . CambiaFormatoFecha($_POST['fecha_creacion']). '" ';
+    if(! EMPTY($_POST['fecha_creacion']))
+            $condiciones['fc'] = 'fecha_creacion '. GetOperador($_POST['fechaC_operador']) . ' "' . CambiaFormatoFecha($_POST['fecha_creacion']). '" ';
 
-	if(! EMPTY($_POST['fecha_realizacion']))
-		$condiciones['fr'] = 'fecha_realizacion ' . GetOperador($_POST['fechaR_operador']) . ' "' . CambiaFormatoFecha($_POST['fecha_realizacion']). '" ';
+    if(! EMPTY($_POST['fecha_realizacion']))
+            $condiciones['fr'] = 'fecha_realizacion ' . GetOperador($_POST['fechaR_operador']) . ' "' . CambiaFormatoFecha($_POST['fecha_realizacion']). '" ';
 
-	if($_POST['provincia'] != 'defecto')
-		$condiciones['prov'] = 'tbl_provincias_cod = '. $_POST['provincia'];
+    if($_POST['provincia'] != 'defecto')
+            $condiciones['prov'] = 'tbl_provincias_cod = '. $_POST['provincia'];
 
-	if(! EMPTY($_POST['telefono']))
-		$condiciones['telefono'] = 'telefono_contacto LIKE "'. $_POST['telefono'] . '%"';
+    if(! EMPTY($_POST['telefono']))
+            $condiciones['telefono'] = 'telefono_contacto LIKE "'. $_POST['telefono'] . '%"';
 
-	if(! EMPTY($_POST['estado']) && $_POST['estado'] != 'defecto')
-		$condiciones['estado'] = 'estado LIKE "' . $_POST['estado'] . '"';	
+    if(! EMPTY($_POST['estado']) && $_POST['estado'] != 'defecto')
+            $condiciones['estado'] = 'estado LIKE "' . $_POST['estado'] . '"';	
 
-	return  implode(' AND ', $condiciones);	
+    return  implode(' AND ', $condiciones);	
 }
 
+/**
+ * Función que devuelve un operador de condición correspondiente a un texto
+ * @param String $textoOperador Texto del operador
+ * @return string Operador
+ */
 function GetOperador($textoOperador){
 
-	if($textoOperador == 'mayor')
-		return '>';
-	if($textoOperador == 'mayorigual')
-		return '>=';
-	if($textoOperador == 'menor')
-		return '<';
-	if($textoOperador == 'menorigual')
-		return '<=';
-	if($textoOperador == 'igual')
-		return '=';
+    switch ($textoOperador){
+        case 'mayor':{
+            return '>';
+            break;
+        }
+        
+        case 'mayorigual':{
+            return '>=';
+            break;
+        }
+        
+        case 'menor':{
+            return '<';
+            break;
+        }
+        
+        case 'menorigual':{
+            return '<=';
+            break;
+        }
+        
+        case 'igual':{
+            return '=';
+            break;
+        }
+        
+        default : {
+            return 'error';
+            break;        
+        }
+    }
 }
 
+/**
+ * Función que cambia el formato de un fecha, de dd-mm-aaa a yyyy-mm-dd
+ * @param String $fecha Fecha a convertir
+ * @return DateTime Fecha Cambiada
+ */
 function CambiaFormatoFecha($fecha){
 
-	$date= new Datetime($fecha);
+    $date= new Datetime($fecha);//Convierte a datetime
 
-	return date_format($date, 'Y-m-d');
+    return date_format($date, 'Y-m-d');
 
 }
 
