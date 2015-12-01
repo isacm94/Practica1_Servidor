@@ -62,10 +62,18 @@ if (!isset($_SESSION['loginok'])) { //Si no está iniciada la sesión muestra el
         if (!$correcto) {
             include_once VIEW_PATH . 'alta.php'; //formulario alta
         } else {
-            $campos = CreaArrayTarea();
+            $dateRealizacion = new Datetime($_POST['fechaRealizacion']);
+
+            $campos = CreaArrayTarea(	 
+                            $_POST['descripcion'], $_POST['personaContacto'], $_POST['telefonoContacto'], $_POST['correoContacto'],
+                            $_POST['direccion'], $_POST['poblacion'], $_POST['cp'],$_POST['provincia'], 'Pendiente', 
+                            null/*ESTADO*/,  date_format($dateRealizacion, 'Y-m-d'), 
+                            $_POST['anotacionesAnte'], null);
+
+
 
             InsertaTareaEnBD('tarea', $campos);
-            include_once CTRL_PATH . 'lista.php'; //muestra la lista
+            include_once CTRL_PATH.'lista.php'; //muestra la lista
         }
     }
 }

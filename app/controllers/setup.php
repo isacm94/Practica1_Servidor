@@ -28,12 +28,13 @@ else{
     
     $mysqli = new mysqli($db_conf['servidor'], $db_conf['usuario'], $db_conf['password'], $db_conf['base_datos']);
     
+    $mysqli->set_charset("utf8");
+    
     if ($mysqli->connect_errno) {
         echo "Falló la conexión a MySQL" ;//. $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
     else{    
-        $sql = file_get_contents('../install/bd.sql');
-        
+        $sql = file_get_contents('../install/bd.sql');        
           
         if ($mysqli->multi_query($sql)) {
             

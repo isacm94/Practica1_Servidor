@@ -148,26 +148,37 @@ function CreaSelect($name, $opciones, /* $valorDefecto='', */ $tamanho = '') {
 
 /**
  * Función que crea un array con los campos introducidos de Tarea
- * @return Array Tarea
+ * @param String $descripcion Descripción   
+ * @param String $pc Persona de Contacto
+ * @param String $tc Teléfono de Contacto
+ * @param String $correo Correo electrónico
+ * @param String $dir Dirección
+ * @param String $pob Población
+ * @param String $cp Código Postal
+ * @param String $codProvincia Código de Provincia
+ * @param String $estado Estado
+ * @param String $operario Operario Encargado
+ * @param String $fR Fecha de Realización
+ * @param String $anotAnt Anotaciones Anteriores
+ * @param String $anotPost Anotaciones Posteriores
+ * @return Array Tarea 
  */
-function CreaArrayTarea() {
-    
-    $dateRealizacion = new Datetime($_POST['fechaRealizacion']);//Convierte a datetime
-    
+function CreaArrayTarea($descripcion, $pc, $tc, $correo, $dir, $pob, $cp, $codProvincia, $estado, $operario, $fR, $anotAnt, $anotPost) {
+
     $tarea = array(/* 'id'=> '', AUTONUMERICO */
-        'descripcion' => $_POST['descripcion'],
-        'persona_contacto' => $_POST['personaContacto'],
-        'telefono_contacto' => $_POST['telefonoContacto'],
-        'correo_contacto' => $_POST['correoContacto'],
-        'direccion' => $_POST['direccion'],
-        'poblacion' => $_POST['poblacion'],
-        'cp' => $_POST['cp'],
-        'tbl_provincias_cod' => $_POST['provincia'],
-        'estado' => 'Pendiente', /* la tarea empieza en pendiente */
-        'operario_encargado' =>  null, //no se asigna el operario en alta, sería en modficiar
-        'fecha_realizacion' => date_format($dateRealizacion, 'Y-m-d'),
-        'anotaciones_anteriores' => $_POST['anotacionesAnte'],
-        'anotaciones_posteriores' => null
+        'descripcion' => $descripcion,
+        'persona_contacto' => $pc,
+        'telefono_contacto' => $tc,
+        'correo_contacto' => $correo,
+        'direccion' => $dir,
+        'poblacion' => $pob,
+        'cp' => $cp,
+        'tbl_provincias_cod' => $codProvincia,
+        'estado' => $estado, /* la tarea empieza en pendiente */
+        'operario_encargado' => $operario, //no se asigna el operario en alta, sería en modficiar
+        'fecha_realizacion' => $fR,
+        'anotaciones_anteriores' => $anotAnt,
+        'anotaciones_posteriores' => $anotPost
     );
 
     return $tarea;

@@ -137,3 +137,4 @@ CREATE TRIGGER `InsertaFechaCreacionEnBD` BEFORE INSERT ON `tarea`
  FOR EACH ROW SET  NEW.fecha_creacion=CURRENT_DATE()
 $$
 DELIMITER ;
+
