@@ -33,7 +33,7 @@ else{
         }
 
         else{
-            AñadirUsuario($_POST['tipo'], $_POST['usuario'], $_POST['clave']);
+            AnhadirUsuario($_POST['tipo'], $_POST['usuario'], $_POST['clave']);
             include_once CTRL_PATH.'listausuarios.php';
         }
     }

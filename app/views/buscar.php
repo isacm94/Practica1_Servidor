@@ -12,13 +12,13 @@
                     <div class="col-md-2">
 
                         <div class="form-group">
-                            
+
                             <p style="font-size: 14pt;"><b>Fecha Creación</b></p>
 
-                            <p><?php echo CreaSelect('fechaC_operador', $opciones_fecha,' style=" width: 90px;" ')?></p>                            
+                            <p><?php echo CreaSelect('fechaC_operador', $opciones_fecha, ' style=" width: 90px;" ') ?></p>                            
 
-                            <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="fecha_creacion" value="<?=ValorPost('fecha_creacion')?>">
-                         </div>
+                            <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="fecha_creacion" value="<?= ValorPost('fecha_creacion') ?>">
+                        </div>
 
                     </div>
 
@@ -26,13 +26,13 @@
                     <div class="col-md-2">
 
                         <div class="form-group">
-                            
+
                             <p style="font-size: 14pt;"><b>Fecha Realización</b></p>
 
-                            <p><?php echo CreaSelect('fechaR_operador', $opciones_fecha, ' style=" width: 90px;" ')?></p>                             
+                            <p><?php echo CreaSelect('fechaR_operador', $opciones_fecha, ' style=" width: 90px;" ') ?></p>                             
 
-                            <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="fecha_realizacion" value="<?=ValorPost('fecha_realizacion')?>">
-                         </div>
+                            <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="fecha_realizacion" value="<?= ValorPost('fecha_realizacion') ?>">
+                        </div>
 
                     </div>
 
@@ -41,8 +41,8 @@
                         <div class="form-group" style="font-size: 13pt;">
 
                             <p style="font-size: 14pt;"><b>Estado</b></p>
-                            
-                            <p><?php echo CreaSelectCon1ValorVacio('estado', array('pendiente' => 'Pendiente', 'realizada' => 'Realizada', 'cancelada' => 'Cancelada'))?> </p>
+
+                            <p><?php echo CreaSelectCon1ValorVacio('estado', array('pendiente' => 'Pendiente', 'realizada' => 'Realizada', 'cancelada' => 'Cancelada')) ?> </p>
 
                         </div>								
                     </div>
@@ -52,7 +52,7 @@
                         <div class="form-group">
 
                             <p style="font-size: 14pt;"><b>Provincia</b></p>
-                            <p><?php echo CreaSelectCon1ValorVacio('provincia', $Provincias, $valorDefecto='Elige una provincia', '')?>	</p>
+                            <p><?php echo CreaSelectCon1ValorVacio('provincia', $Provincias, $valorDefecto = 'Elige una provincia', '') ?>	</p>
 
                         </div>							
 
@@ -64,16 +64,16 @@
                         <div class="form-group">
 
                             <p style="font-size: 14pt;"><b>Teléfono</b></p>
-                            <p><input type="text" class="form-control" placeholder="Teléfono" name="telefono" value="<?=ValorPost('telefono')?>">	</p>
+                            <p><input type="text" class="form-control" placeholder="Teléfono" name="telefono" value="<?= ValorPost('telefono') ?>">	</p>
 
                         </div>							
 
                     </div>					
                 </div><!-- fin row -->
 
-                <?php 
-                    if(! empty($errores))
-                        MuestraError($errores);
+                <?php
+                if (!empty($errores))
+                    MuestraError($errores);
                 ?>
 
                 <!-- BOTON BUSCAR -->

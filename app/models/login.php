@@ -35,7 +35,7 @@ function LoginOK($usuario, $clave){
  * @param String $usuario Nombre de usuario
  * @param String $clave Contraseña de usuario
  */
-function AñadirUsuario($tipo, $usuario, $clave){  
+function AnhadirUsuario($tipo, $usuario, $clave){  
 
     /*Creamos la instancia del objeto. Ya estamos conectados*/
     $bd = Db::getInstance();	
