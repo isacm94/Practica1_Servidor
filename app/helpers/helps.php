@@ -185,6 +185,14 @@ function CreaArrayTarea($descripcion, $pc, $tc, $correo, $dir, $pob, $cp, $codPr
 }
 
 //vista MODIFICAR
+
+/**
+ * Función que crea RadioButtons
+ * @param String $name Nombre del campo
+ * @param Array $values Datos de los RadioButtons
+ * @param String $id ID de la tarea
+ * @return String Código HTML generado
+ */
 function CreaRadio($name, $values, $id) {
 
     $valorGuardado = CargaDatos($id, $name);
@@ -193,31 +201,26 @@ function CreaRadio($name, $values, $id) {
 
     $numRespuestas = count($values);
 
-    foreach ($values as $key => $value) {
+    foreach ($values as $value => $text) {
         $html.= '<label class="radio-inline">';
-        $html.= '<input type="radio" name="' . $name . '" value="' . $key . '" ';
-        $html.= CheckIfValue($name, $key);
-        $html.= $value == $valorGuardado ? ' checked ' : '';
-        $html.='>' . $value . '</label>';
+        $html.= '<input type="radio" name="' . $name . '" value="' . $value . '" ';
+        $html.= $text == $valorGuardado ? ' checked ' : '';
+        $html.='>' . $text . '</label>';
     }
 
     return $html;
 }
 
-//radioButton
-function CheckIfValue($nombreCampo, $valor) {
-    if (isset($_POST[$nombreCampo]) && $_POST[$nombreCampo] == $valor) {
-        return ' checked ';
-    } else {
-        return '';
-    }
-}
 
-//Carga los datos correspondiente en el formulario de modificar
+/**
+ * Carga los datos guardados en cada input del formulario de modificar
+ * @param String $id ID de la tarea
+ * @param String $name Nombre del campo
+ * @return String Dato del campo
+ */
 function CargaDatos($id, $name) {
 
     $tarea = GetUnaTarea($id);
-
 
     if ($name == 'fecha_realizacion') {
         $dateRealizacion = new Datetime($tarea[0][$name]);

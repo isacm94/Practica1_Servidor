@@ -14,9 +14,9 @@
 
                 <div class="panel-body">
 
-                     <form class="form-horizontal" action="index.php?ctrl=alta" method="POST">
+                    <form class="form-horizontal" action="index.php?ctrl=alta" method="POST">
                         <div clas="form-group">
-                            
+
                             <div class="row">
                                 <div class="col-md-12">		
                                     <label style='float: left;'>Descripción:</label>
@@ -24,14 +24,14 @@
                                     <?= VerError('descripcion', $errores) ?>                                                             
                                 </div>
                             </div>
-                        <br>
+                            <br>
 
                             <div class="row">
                                 <div class="col-md-4">
 
                                     <label style='float: left;'>Persona de Contacto:</label>
 
-                                    <input type="text" class="form-control" placeholder="Persona de Contacto" name="personaContacto" value="<?= ValorPost('personaContacto') ?>">
+                                    <input type="text" maxlength="50" class="form-control" placeholder="Persona de Contacto" name="personaContacto" value="<?= ValorPost('personaContacto') ?>">
                                     <?= VerError('personaContacto', $errores) ?>										 
 
                                 </div>
@@ -40,7 +40,7 @@
 
                                     <label style='float: left;'>Telefono de Contacto:</label>
 
-                                    <input type="tel" class="form-control" placeholder="Telefono de Contacto" name="telefonoContacto" value="<?= ValorPost('telefonoContacto') ?>">
+                                    <input type="text" maxlength="9" class="form-control" placeholder="Telefono de Contacto" name="telefonoContacto" value="<?= ValorPost('telefonoContacto') ?>">
                                     <?= VerError('telefonoContacto', $errores) ?>			        
 
 
@@ -50,20 +50,20 @@
 
                                     <label style='float: left;'>Correo de Contacto: </label>
 
-                                    <input type="email" class="form-control" placeholder="Correo de Contacto" name="correoContacto" value="<?= ValorPost('correoContacto') ?>">
+                                    <input type="email" maxlength="30" class="form-control" placeholder="Correo de Contacto" name="correoContacto" value="<?= ValorPost('correoContacto') ?>">
                                     <?= VerError('correoContacto', $errores) ?>											
 
                                 </div>
 
                             </div>
-<br>
+                            <br>
                             <div class="row">
 
                                 <div class="col-md-3">
 
                                     <label style='float: left;'>Dirección:</label>
 
-                                    <input type="text" class="form-control" placeholder="Dirección" name="direccion" value="<?= ValorPost('direccion') ?>">
+                                    <input type="text" maxlength="100" class="form-control" placeholder="Dirección" name="direccion" value="<?= ValorPost('direccion') ?>">
 
                                 </div>
 
@@ -71,8 +71,7 @@
 
                                     <label style='float: left;'>Población:</label>
 
-                                    <input type="text" class="form-control" placeholder="Población" name="poblacion" value="<?= ValorPost('direccion') ?>">
-
+                                    <input type="text" maxlength="100" class="form-control" placeholder="Población" name="poblacion" value="<?= ValorPost('direccion') ?>">
 
                                 </div>
 
@@ -80,27 +79,25 @@
 
                                     <label style='float: left;'>Código Postal:</label>
 
-                                    <input type="text" class="form-control" placeholder="CP" name="cp" value="<?= ValorPost('cp') ?>" maxlength="5" >
+                                    <input type="text" maxlength="5" class="form-control" placeholder="CP" name="cp" value="<?= ValorPost('cp') ?>" maxlength="5" >
                                     <?= VerError('cp', $errores) ?>
-
-
+                                    
                                 </div>
 
                                 <div class="col-md-3">
                                     <!-- SELECT CON PROVINCIAS -->
-
                                     <label style='float: left;'>Provincia:</label>
 
                                     <?php echo CreaSelect('provincia', $Provincias) ?>                                                              
 
                                 </div>
                             </div>
-<br>
+                            <br>
                             <div class="row">        
                                 <div class="col-md-3">
                                     <label style='float: left;'>Fecha Realización:</label>
 
-                                    <input type="text" class="form-control" placeholder="dd-mm-aaaa" name="fechaRealizacion" value="<?= ValorPost('fechaRealizacion') ?>">
+                                    <input type="text" maxlength="10" class="form-control" placeholder="dd-mm-aaaa" name="fechaRealizacion" value="<?= ValorPost('fechaRealizacion') ?>">
                                     <?= VerError('fechaRealizacion', $errores) ?>
                                     <?= VerError('fechaRealizacionVacia', $errores) ?>
 
@@ -118,11 +115,7 @@
 
                             <br>
 
-                            <div class="col-xs-offset-3 col-xs-9">
-                                <input type="submit" class="btn btn-comun"value="Enviar">
-                            </div>
-
-
+                            <input type="submit" class="btn btn-block btn-comun" value="Enviar">
 
                         </div>
                     </form>
