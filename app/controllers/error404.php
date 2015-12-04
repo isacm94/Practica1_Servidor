@@ -4,7 +4,7 @@
 	<!-- 2ª COLUMNA -->
 	<div class="col-md-10">
 		
-		<div class="panel panel-default" style="margin-top: 25%; margin-bottom: 25%;">
+		<div class="panel panel-default" style="margin-top: 29%; margin-bottom: 23%;">
 
 			<div class="panel-body">
 

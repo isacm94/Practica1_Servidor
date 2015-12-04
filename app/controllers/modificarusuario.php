@@ -39,13 +39,16 @@ else{
             if(! $correcto)
                 include_once VIEW_PATH.'modificarusuario.php';
             else {
+                $_SESSION['usuario'] = $_POST['usuario'];
                 if(empty($_POST['clavenueva']) && empty($_POST['clavenuevarep']))//Si estan vacias las dos claves, solo se modificar el nombre de usuario
-                    ModificaUsuarioEnBD(array('usuario'=>$_POST['usuario']), $_GET['id']);
+                    ModificaUsuarioEnBD(array('usuario'=>$_POST['usuario']), $_GET['id']);              
+                
                 else
                     ModificaUsuarioEnBD(array('usuario' => $_POST['usuario'], 'clave' => $_POST['clavenueva']), $_GET['id']);
 
-
-                include_once CTRL_PATH.'listausuarios.php';
+                
+                
+                header('Location: index.php?ctrl=listausuarios');
 
             }
 

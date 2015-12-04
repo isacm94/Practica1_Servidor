@@ -71,7 +71,7 @@
 
                                     <label style='float: left;'>Población:</label>
 
-                                    <input type="text" maxlength="100" class="form-control" placeholder="Población" name="poblacion" value="<?= ValorPost('direccion') ?>">
+                                    <input type="text" maxlength="100" class="form-control" placeholder="Población" name="poblacion" value="<?= ValorPost('poblacion') ?>">
 
                                 </div>
 

@@ -33,9 +33,7 @@
                     
                 <ul class="nav navbar-nav navbar-right" style=" float: right;">
                     
-                    <?php
-                    //print_r($_SESSION);
-                        if(isset($_SESSION['loginok'])) :?>
+                    <?php if (isset($_SESSION['loginok'])) :?>
                                 
                                 <span style=" float: right; color: #18BC9C;"> 
                                     <span class="glyphicon glyphicon-user"> </span>  
@@ -66,11 +64,13 @@
                         <li class="page-scroll">
                             <a href="?ctrl=buscar" title="Buscar tareas"><span class="glyphicon glyphicon-search"></span> Buscar</a>
                         </li>
-
+                    
+                    <?php
+                        if(! isset($_SESSION['loginok'])) :?>    
                         <li class="page-scroll">
                             <a href="?ctrl=login" title="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
                         </li>
-                        
+                    <?php endif;?>    
                         
                         <?php if(isset($_SESSION['tipousuario'])&& $_SESSION['tipousuario'] == 'A'):?>
                                 <li class="page-scroll">
