@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * HELP funcion usada en lista de tareas
+ */
+
+/**
  * Función que muestra los datos de todas las tareas en forma de tabla en la vista
  * @param Array $tareas Tareas a mostrar
  */
@@ -36,7 +40,7 @@ function EscribeTarea($tareas) {
 
             echo '<a href="?ctrl=eliminar&id=' . $id . '" class="btn btn-danger" title="Eliminar Tarea"><span class="glyphicon glyphicon-trash"></span></a>';
         }
-        echo '</td>';//Fin de columna de opciones
-        echo '</tr>';//Fin fila
+        echo '</td>'; //Fin de columna de opciones
+        echo '</tr>'; //Fin fila
     }
 }

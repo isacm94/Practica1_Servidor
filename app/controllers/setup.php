@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * CONTROLADOR del instalador
+ */
 if(! $_POST)
     include_once VIEW_PATH."setup.php";
 else{

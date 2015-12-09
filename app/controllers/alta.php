@@ -1,11 +1,12 @@
 <?php
 
+/**
+ * CONTROLADOR de añadir tarea
+ */
 if (!isset($_SESSION['loginok'])) { //Si no está iniciada la sesión muestra el login
     include_once CTRL_PATH . 'login.php';
-    
 } else if ($_SESSION['tipousuario'] != 'A') {//Sólo puede añadir administradores
     include_once CTRL_PATH . 'error404.php';
-    
 } else {
     include_once HELP_PATH . 'helps.php';
     include_once HELP_PATH . 'help_lista.php';
@@ -64,16 +65,13 @@ if (!isset($_SESSION['loginok'])) { //Si no está iniciada la sesión muestra el
         } else {
             $dateRealizacion = new Datetime($_POST['fechaRealizacion']);
 
-            $campos = CreaArrayTarea(	 
-                            $_POST['descripcion'], $_POST['personaContacto'], $_POST['telefonoContacto'], $_POST['correoContacto'],
-                            $_POST['direccion'], $_POST['poblacion'], $_POST['cp'],$_POST['provincia'], 'Pendiente', 
-                            null/*ESTADO*/,  date_format($dateRealizacion, 'Y-m-d'), 
-                            $_POST['anotacionesAnte'], null);
+            $campos = CreaArrayTarea(
+                    $_POST['descripcion'], $_POST['personaContacto'], $_POST['telefonoContacto'], $_POST['correoContacto'], $_POST['direccion'], $_POST['poblacion'], $_POST['cp'], $_POST['provincia'], 'Pendiente', null/* ESTADO */, date_format($dateRealizacion, 'Y-m-d'), $_POST['anotacionesAnte'], null);
 
 
 
             InsertaTareaEnBD('tarea', $campos);
-            include_once CTRL_PATH.'lista.php'; //muestra la lista
+            include_once CTRL_PATH . 'lista.php'; //muestra la lista
         }
     }
 }

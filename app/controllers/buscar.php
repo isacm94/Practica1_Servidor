@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * CONTROLADOR de buscar tareas
+ */
 if(! isset($_SESSION['loginok'])){
     
     include_once CTRL_PATH.'login.php';  

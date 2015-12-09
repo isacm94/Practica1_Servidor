@@ -1,3 +1,5 @@
+<!-- VISTA de listar usuarios -->
+
 <div class="container">	
     <div class="row well">
         <div class="col-md-12">
@@ -9,7 +11,7 @@
                                     
                 </ul>
             </div>
-            <div class="col-md-9" style="height: 300px;">
+            <div class="col-md-9" style="">
                 <div style="background-color: white; border-radius: 3px; padding: 5px;">
                     <h3>Lista de Usuarios</h3>
                     <table class="table table-striped table-bordered">

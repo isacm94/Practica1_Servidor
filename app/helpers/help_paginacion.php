@@ -1,8 +1,11 @@
 <?php
 
 /**
- * Muestra un paginador para una lista de elementos
- * 
+ * HELP funciones usadas en la paginación
+ */
+
+/**
+ * Muestra un paginador para una lista de elementos * 
  * @param Int $pag_actual
  * @param Int $nPags
  * @param String $url
@@ -80,5 +83,3 @@ function EnlaceAPagina($url, $pag, $texto, $activo = true) {
             break;
     }
 }
-
-

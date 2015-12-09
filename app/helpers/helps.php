@@ -1,4 +1,7 @@
 <?php
+/**
+ * HELP funciones usadas añadir y modificar un usuario
+ */
 
 /**
  * Función que comprueba que el formato de teléfono sea correcto.
@@ -6,8 +9,8 @@
  * @param String $telefono Número de teléfono
  * @return boolean True si el formato es correcto
  */
-function FormatoCorrectoTelefono($telefono){
-	
+function FormatoCorrectoTelefono($telefono) {
+
     $telefono = str_replace(' ', '', $telefono); //devuelve cadena sin espacios
     $telefono = str_replace('-', '', $telefono); //devuelve cadena sin guiones
 
@@ -110,7 +113,7 @@ function VerError($campo, $errores) {
 
     if (isset($errores[$campo])) {
         echo '<div class="alert alert-danger">';
-            echo '<strong>¡Error! </strong>' . $errores[$campo];
+        echo '<strong>¡Error! </strong>' . $errores[$campo];
         echo '</div>';
     }
 }
@@ -210,7 +213,6 @@ function CreaRadio($name, $values, $id) {
 
     return $html;
 }
-
 
 /**
  * Carga los datos guardados en cada input del formulario de modificar

@@ -1,3 +1,5 @@
+<!-- VISTA de eliminar tarea -->
+
 <div class="container">		
 
     <div class="row">

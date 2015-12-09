@@ -20,18 +20,18 @@ CREATE TABLE IF NOT EXISTS `tarea` (
 
 
 INSERT INTO `tarea` (`id`, `descripcion`, `persona_contacto`, `telefono_contacto`, `correo_contacto`, `direccion`, `poblacion`, `cp`, `tbl_provincias_cod`, `estado`, `fecha_creacion`, `operario_encargado`, `fecha_realizacion`, `anotaciones_anteriores`, `anotaciones_posteriores`) VALUES
-(1, 'Plantar flores', 'Javier García', 933452145, 'javier@garcia.com', 'Calle Plus Ultra, 36', 'Huelva Capital', 91448, '35', 'Realizada', '2015-11-07', 'Antonio', '2017-02-07', 'Plantar las flores rápido', ''),
+(1, 'Plantar flores', 'Javier García', 933452145, 'javier@garcia.com', 'Calle Plus Ultra, 36', 'Huelva Capital', 21448, '35', 'Realizada', '2015-11-07', 'Antonio', '2017-02-07', 'Plantar las flores rápido', ''),
 (2, 'Regar las flores', 'Carlos Pérez', 933452145, 'carlos@perez.com', 'Calle Almonte, 36', 'Almonte', 51248, '30', 'Pendiente', '2015-11-07', '', '2017-08-07', 'Regar las flores rápido', 'Regar otra vez'),
-(3, 'Cortar las flores', 'Antonio Calvo', 933777145, 'antonio@calvo.com', 'Calle Placido Bañuelos, 17', 'Rociana', 51778, '21', 'Realizada', '2015-11-07', 'Ángel', '2017-08-01', 'Cortar las flores rápido', 'Cortar otra vez'),
+(3, 'Cortar las flores', 'Antonio Calvo', 933777145, 'antonio@calvo.com', 'Calle Placido Bañuelos, 17', 'Rociana del Condado', 21720, '21', 'Realizada', '2015-11-07', 'Ángel', '2017-08-01', 'Cortar las flores rápido', 'Cortar otra vez'),
 (4, 'Regar césped', 'Luca Betanzos Calvo', 945777123, 'luca@btzs.com', 'Calle Nueva, 19', 'Bollullos', 51744, '01', 'Realizada', '2015-11-07', 'Adán', '2017-08-01', 'Regar césped rápido', 'Regar césped otra vez'),
 (5, 'Regar las flores', 'Carlos Mateos', 933452145, 'carlos@perez.com', 'Calle La Fuente, 36', 'Villarrasa', 45248, '30', 'Realizada', '2015-11-07', 'Manuel', '2017-08-07', 'Regar las flores rápido', 'gpgppgpgpg'),
 (6, 'Cortar las flores', 'Antonio Banderas', 933777145, 'antonio@banderas.com', 'Calle Larga, 1', 'Marbella', 51778, '23', 'Pendiente', '2015-11-07', '', '2017-08-01', 'Cortar las flores rápido', 'Cortar otra vez'),
 (7, 'Regar césped', 'Nora Betanzos Calvo', 941777123, 'nora@btzs.com', 'Calle Nueva, 19', 'Bonares', 51744, '01', 'Realizada', '2015-11-07', 'Rufino', '2017-08-01', 'Regar césped rápido', 'Regar césped otra vez'),
 (8, 'Regar las flores', 'José Mateos', 959452145, 'jose@mateos.com', 'Calle La Fuente, 36', 'Almonte', 45248, '30', 'Pendiente', '2015-11-10', '', '2016-06-07', 'Regar las flores rápido', 'Regar otra vez'),
 (9, 'Cortar las flores', 'Adán Candeas', 933777145, 'adan@candeas.com', 'Calle Larga, 1', 'Aroche', 51778, '23', 'Pendiente', '2015-11-10', '', '2016-05-01', 'Cortar las flores rápido', 'Cortar otra vez'),
-(10, 'Regar césped', 'Laura Carrasco Sánchez', 941777123, 'laura@carrasco.com', 'Calle Nueva, 23', 'Rociana', 51744, '17', 'Pendiente', '2015-11-10', '', '2017-10-04', 'Regar césped rápido', 'Regar césped otra vez'),
-(11, 'Regar césped', 'Susana Carrasco Sánchez', 941777123, 'susana@carrasco.com', 'Calle Nueva, 23', 'Rociana', 51744, '17', 'Pendiente', '2015-11-10', '', '2017-08-17', 'Regar césped rápido', 'Regar césped otra vez'),
-(12, 'Podar arbustos', 'Fernando Calvo', 600152478, 'fernandocalvo@gmail.com', 'Calle Cabreros, 36', 'Rociana del Condado', 21720, '13', 'Cancelada', '2015-11-28', '', '2017-12-23', 'Regar ', 'Rápido');
+(10, 'Regar césped', 'Laura Carrasco Sánchez', 941777123, 'laura@carrasco.com', 'Calle Nueva, 23', 'Rociana del Condado', 21720, '21', 'Pendiente', '2015-11-10', '', '2017-10-04', 'Regar césped rápido', 'Regar césped otra vez'),
+(11, 'Regar césped', 'Susana Carrasco Sánchez', 941777123, 'susana@carrasco.com', 'Calle Nueva, 23', 'Rociana del Condado', 21720, '21', 'Pendiente', '2015-11-10', '', '2017-08-17', 'Regar césped rápido', 'Regar césped otra vez'),
+(12, 'Podar arbustos', 'Fernando Calvo', 600152478, 'fernandocalvo@gmail.com', 'Calle Cabreros, 36', 'Rociana del Condado', 21720, '21', 'Cancelada', '2015-11-28', '', '2017-12-23', 'Regar ', 'Rápido');
 
 DROP TABLE IF EXISTS `tbl_provincias`;
 CREATE TABLE IF NOT EXISTS `tbl_provincias` (

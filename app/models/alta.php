@@ -1,4 +1,7 @@
 <?php
+/**
+ * MODELO de añadir tarea
+ */
 
 /**
  * Función que añade una tarea a la base de datos

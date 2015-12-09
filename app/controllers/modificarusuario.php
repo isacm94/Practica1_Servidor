@@ -1,4 +1,7 @@
 <?php
+/**
+ * CONTROLADOR de modificar usuario
+ */
 if(! isset($_SESSION['loginok']) || ! isset($_GET['id'])){//Si no está iniciada la sesión o no se le pasa id muestra error
     
     include_once CTRL_PATH.'error404.php';
@@ -33,9 +36,7 @@ else{
                 $errores['existenuevonombre'] = TRUE;
                 $correcto = FALSE;
             }
-
-
-
+            
             if(! $correcto)
                 include_once VIEW_PATH.'modificarusuario.php';
             else {
@@ -45,8 +46,7 @@ else{
                 
                 else
                     ModificaUsuarioEnBD(array('usuario' => $_POST['usuario'], 'clave' => $_POST['clavenueva']), $_GET['id']);
-
-                
+             
                 
                 header('Location: index.php?ctrl=listausuarios');
 

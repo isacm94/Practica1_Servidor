@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * CONTROLADOR de login de usuario
+ */
+include_once HELP_PATH.'helps.php';
 if (isset($_SESSION['loginok'])) { //Si no está iniciada la sesión muestra el login
     include_once CTRL_PATH . 'error404.php';
 } else {
@@ -24,6 +27,6 @@ if (isset($_SESSION['loginok'])) { //Si no está iniciada la sesión muestra el 
                 include_once VIEW_PATH . 'login.php';
             }
         } else
-            header('Location: index.php?ctrl=login');
+            include_once VIEW_PATH.'login.php';
     }
 }

@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * CONTROLADOR de eliminar tarea
+ */
 if(! isset($_GET['id'])){//Si no llega un id muestra error
     
     include_once CTRL_PATH.'error404.php';  

@@ -1,3 +1,4 @@
+<!-- VISTA de buscar tareas -->
 
 <div class="container">
     <form action="" class="form-group" method="POST">
@@ -9,36 +10,31 @@
 
                 <div class="row">
                     <!-- 1ª COLUMNA -->
-                    <div class="col-md-2">
+                    <div class="col-md-2">                      
 
-                        <div class="form-group">
+                        <p style="font-size: 14pt; float: left;"><b>Fecha Creación</b></p>
 
-                            <p style="font-size: 14pt;"><b>Fecha Creación</b></p>
+                        <p><?php echo CreaSelect('fechaC_operador', $opciones_fecha, ' style=" width: 90px;" ') ?></p>                            
 
-                            <p><?php echo CreaSelect('fechaC_operador', $opciones_fecha, ' style=" width: 90px;" ') ?></p>                            
+                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="fecha_creacion" value="<?= ValorPost('fecha_creacion') ?>">
 
-                            <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="fecha_creacion" value="<?= ValorPost('fecha_creacion') ?>">
-                        </div>
 
                     </div>
 
                     <!-- 2ª COLUMNA -->
                     <div class="col-md-2">
 
-                        <div class="form-group">
+                        <p style="font-size: 14pt; float: left;"><b>Fecha Realización</b></p>
 
-                            <p style="font-size: 14pt;"><b>Fecha Realización</b></p>
+                        <p><?php echo CreaSelect('fechaR_operador', $opciones_fecha, ' style=" width: 90px;" ') ?></p>                             
 
-                            <p><?php echo CreaSelect('fechaR_operador', $opciones_fecha, ' style=" width: 90px;" ') ?></p>                             
-
-                            <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="fecha_realizacion" value="<?= ValorPost('fecha_realizacion') ?>">
-                        </div>
+                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="fecha_realizacion" value="<?= ValorPost('fecha_realizacion') ?>">
 
                     </div>
 
                     <!-- 3ª COLUMNA -->
                     <div class="col-md-3">
-                        <div class="form-group" style="font-size: 13pt;">
+                        <div style="font-size: 13pt;">
 
                             <p style="font-size: 14pt;"><b>Estado</b></p>
 
@@ -49,33 +45,26 @@
 
                     <!-- 4ª COLUMNA -->
                     <div class="col-md-3">
-                        <div class="form-group">
 
-                            <p style="font-size: 14pt;"><b>Provincia</b></p>
-                            <p><?php echo CreaSelectCon1ValorVacio('provincia', $Provincias, $valorDefecto = 'Elige una provincia', '') ?>	</p>
-
-                        </div>							
+                        <p style="font-size: 14pt;"><b>Provincia</b></p>
+                        <p><?php echo CreaSelectCon1ValorVacio('provincia', $Provincias, $valorDefecto = 'Elige una provincia', '') ?>	</p>
 
                     </div>	
 
                     <!-- 5ª COLUMNA -->
                     <div class="col-md-2">
 
-                        <div class="form-group">
-
-                            <p style="font-size: 14pt;"><b>Teléfono</b></p>
-                            <p><input type="text" class="form-control" placeholder="Teléfono" name="telefono" value="<?= ValorPost('telefono') ?>">	</p>
-
-                        </div>							
+                        <p style="font-size: 14pt;"><b>Teléfono</b></p>
+                        <p><input type="text" class="form-control" placeholder="Teléfono" name="telefono" value="<?= ValorPost('telefono') ?>">	</p>
 
                     </div>					
                 </div><!-- fin row -->
-
+                <p>
                 <?php
                 if (!empty($errores))
                     MuestraError($errores);
                 ?>
-
+                </p>
                 <!-- BOTON BUSCAR -->
                 <p>
                     <button type="submit" class="btn btn-block btn-comun"><span class="glyphicon glyphicon-search"></span> Búsqueda</button>

@@ -1,4 +1,8 @@
 <?php
+/**
+ * MODELO que devuelve datos relacionados con las provincias
+ */
+
 
 /**
  * Función que devuelve un array con los datos de las provincias

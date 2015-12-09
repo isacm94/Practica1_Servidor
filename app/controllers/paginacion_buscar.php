@@ -1,7 +1,11 @@
 <?php
+/**
+ * CONTROLADOR de la paginación de los resultados de buscar
+ */
 include_once HELP_PATH.'help_lista.php';
 include_once HELP_PATH.'help_paginacion.php';
-//Incluir modelo
+
+//Modelos
 include_once MODEL_PATH.'buscar.php';
 include_once MODEL_PATH.'provincias.php';
 

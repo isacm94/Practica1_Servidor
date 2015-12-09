@@ -1,4 +1,7 @@
 <?php
+/**
+ * HELP funciones usadas en buscar
+ */
 
 /**
  * Función que crea un select con el campo por defecto vacío

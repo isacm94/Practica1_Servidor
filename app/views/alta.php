@@ -1,3 +1,4 @@
+<!-- VISTA de añadir tarea -->
 
 <div class="container">		
 
@@ -81,7 +82,7 @@
 
                                     <input type="text" maxlength="5" class="form-control" placeholder="CP" name="cp" value="<?= ValorPost('cp') ?>" maxlength="5" >
                                     <?= VerError('cp', $errores) ?>
-                                    
+
                                 </div>
 
                                 <div class="col-md-3">

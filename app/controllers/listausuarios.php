@@ -1,4 +1,7 @@
 <?php
+/**
+ * CONTROLADOR de listar usuarios
+ */
 if(! isset($_SESSION['loginok'])){//Si no está iniciada la sesión muestra error
     
     include_once CTRL_PATH.'error404.php';

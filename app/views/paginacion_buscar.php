@@ -1,4 +1,4 @@
-					
+<!-- VISTA que muestra los resultados de buscar en forma de tabla y paginados -->					
 <div class="container">	
     <div class="panel-default" style="background-color: white; border-radius: 3px; margin-top: -250px;">
 
@@ -33,7 +33,7 @@
                                     <th>Opciones</th>
                                 </tr>
 
-                                <?=EscribeTarea(GetBusqueda($condicion, $nReg, $nElementosxPagina))?>
+                                <?= EscribeTarea(GetBusqueda($condicion, $nReg, $nElementosxPagina)) ?>
 
                             </tbody>
 

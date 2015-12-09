@@ -1,3 +1,5 @@
+<!-- VISTA de eliminar usuario -->
+
 <div class="container">	
     <div class="row well">
         <div class="col-md-12">
